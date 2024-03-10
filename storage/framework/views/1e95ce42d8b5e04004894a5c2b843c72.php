@@ -23,10 +23,10 @@
                                 </h2>
                                 <div class="desc">
                                     <p>
-                                        Tandis est une societe de production de transformation , distribution et commercialisation des produits avicoles
-
-                                        Nous sommes ume entreprise qui compte revolutionner le secteur avicole africain et plus precisement camerounais . La cherte de la vie et en particulier celle des produits comme la volaille est l'element declencheur du projet ( Nous voulons faire rayonner l'activite avicole camerounaise qui connais de nos jour de nombreuses difficultes.)
-                                    </p>
+                                        TANDIS INVEST a pour mission d'accompagner l'investissement dans des PMEs 
+                                        et Start-Ups qui déploient leurs services en Afrique, ou permettent de valoriser 
+                                        l’identité africaine à travers le Monde, et qui sont innovantes, à fort impact 
+                                        social et plutôt prometteuses dans cet ecosystème.  </p>
                                 </div>
                             </div>
                             <div class="fun-fact-area">
@@ -77,7 +77,7 @@
                                                 </defs>
                                                 <text font-size="16">
                                                     <textPath xlink:href="#circle" class="shape-1">
-                                                        Solar Energy . Solar Energy .
+                                                        Tandis Investement . Tandis Investement .
                                                     </textPath>
                                                 </text>
                                             </svg>
@@ -118,7 +118,7 @@
                         <th scope="col">Début</th>
                         <th scope="col">Fin</th>
                         <th scope="col">Montant</th>
-                        <th scope="col text-bg-primary">Statut</th>
+                        <th scope="col tj-color-theme-primary">Statut</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -160,8 +160,8 @@
                         <div class="tj-sec-heading text-center">
                             <span class="sub-title">Nos projets</span>
                             <h2 class="sec-title">
-                                Solar Renewable Services for <br />
-                                <span>A Greener World</span>
+                                Liste des projets en cours<br />
+                                <span>2024</span>
                             </h2>
                         </div>
                     </div>
@@ -171,172 +171,74 @@
 
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
-                      <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">Last updated 3 mins ago</small>
+                        <div class="card h-100 text-center">
+                          <img src="<?php echo e(asset('assets/images/banner/ban1.jpg')); ?>" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Tandis</p>
+                            <p class="sec-title"> objectif: 40000000 XAF</p>
+                            <p class="card-text text-success"> Montant actuel : 9455979 XAF </p>
+                            <div class="progress">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            </div>
+                            <div class="card-footer d-flex  text-right justify-content-center">
+                                <button type="button" class="btn btn-success btn-lg btn-block"> Investir </button>
+                                <button type="button" class="btn btn-warning btn-lg btn-block">Details</button>
+                            </div>
+                          </div>
+                          <div class="card-footer"> 
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                          </div>
                         </div>
                       </div>
-                    </div>
+
+                      <div class="col">
+                        <div class="card h-100 text-center">
+                          <img src="<?php echo e(asset('assets/images/banner/ban1.jpg')); ?>" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Tandis</p>
+                            <p class="card-text"> objectif: 40000000 XAF</p>
+                            <p class="card-text text-success"> Montant actuel : 9455979 XAF </p>
+                            <div class="progress">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            </div>
+                            <div class="card-footer d-flex  text-right justify-content-center">
+                                <button type="button" class="btn btn-success btn-lg btn-block"> Investir </button>
+                                <button type="button" class="btn btn-warning btn-lg btn-block">Details</button>
+                            </div>
+                          </div>
+                          <div class="card-footer"> 
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                          </div>
+                        </div>
+                      </div>
                     <div class="col">
-                      <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="...">
+                      <div class="card h-100 text-center">
+                        <img src="<?php echo e(asset('assets/images/banner/ban1.jpg')); ?>" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                          <h5 class="card-title">Tandis</h5>
+                          <p class="card-text">Société d'élevage</p>
+                          <p class="card-text"> objectif: 40000000 XAF</p>
+                          <p class="card-text text-success"> Montant actuel : 9455979 XAF </p>
+                          <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                          </div>
+                          <div class="card-footer d-flex  text-right justify-content-center">
+                            
+                            <button type="button" class="btn btn-success btn-lg btn-block"> Investir </button>
+                            <button type="button" class="btn btn-warning btn-lg btn-block">Details</button>
+                          </div>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer"> 
                           <small class="text-muted">Last updated 3 mins ago</small>
                         </div>
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                          <a href="#" class="card-link">Card link</a>
-                          <a href="#" class="btn btn-primary">Another link</a>
-                        </div>
-                        <div class="card-footer">
-                          <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="tj-service-item-two">
-                            <div class="service-icon-box">
-                                <div class="service-icon hover-shape-border">
-                                    <i class="flaticon-environmental"></i>
-                                    <div class="icon-shape">
-                                        <span class="border-shadow shadow-1"></span>
-                                        <span class="border-shadow shadow-2"></span>
-                                        <span class="border-shadow shadow-3"></span>
-                                    </div>
-                                </div>
-                                <div class="item-shape">
-                                    <img src="<?php echo e(asset('assets/images/shape/shape-1.svg')); ?>" alt="Shape" />
-                                </div>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="title"><a href="service-details.html">Hydropower Plants</a></h4>
-                                <div class="desc">
-                                    <p>
-                                        All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                        chunks as necessary, making words,
-                                    </p>
-                                </div>
-                                <div class="read-more">
-                                    <a class="link" href="service-details.html">Read More <i
-                                    class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="tj-service-item-two">
-                            <div class="service-icon-box">
-                                <div class="service-icon hover-shape-border">
-                                    <i class="flaticon-save-energy"></i>
-                                    <div class="icon-shape">
-                                        <span class="border-shadow shadow-1"></span>
-                                        <span class="border-shadow shadow-2"></span>
-                                        <span class="border-shadow shadow-3"></span>
-                                    </div>
-                                </div>
-                                <div class="item-shape">
-                                    <img src="<?php echo e(asset('assets/images/shape/shape-1.svg')); ?>" alt="Shape" />
-                                </div>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="title"><a href="service-details.html">Fossil Resources</a></h4>
-                                <div class="desc">
-                                    <p>
-                                        All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                        chunks as necessary, making words,
-                                    </p>
-                                </div>
-                                <div class="read-more">
-                                    <a class="link" href="service-details.html">Read More <i
-                                    class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="tj-service-item-two">
-                            <div class="service-icon-box">
-                                <div class="service-icon hover-shape-border">
-                                    <i class="flaticon-hydropower"></i>
-                                    <div class="icon-shape">
-                                        <span class="border-shadow shadow-1"></span>
-                                        <span class="border-shadow shadow-2"></span>
-                                        <span class="border-shadow shadow-3"></span>
-                                    </div>
-                                </div>
-                                <div class="item-shape">
-                                    <img src="<?php echo e(asset('assets/images/shape/shape-1.svg')); ?>" alt="Shape" />
-                                </div>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="title"><a href="service-details.html">Maximize Green Resources</a></h4>
-                                <div class="desc">
-                                    <p>
-                                        All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                        chunks as necessary, making words,
-                                    </p>
-                                </div>
-                                <div class="read-more">
-                                    <a class="link" href="service-details.html">Read More <i
-                                    class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="tj-service-item-two">
-                            <div class="service-icon-box">
-                                <div class="service-icon hover-shape-border">
-                                    <i class="flaticon-green-energy"></i>
-                                    <div class="icon-shape">
-                                        <span class="border-shadow shadow-1"></span>
-                                        <span class="border-shadow shadow-2"></span>
-                                        <span class="border-shadow shadow-3"></span>
-                                    </div>
-                                </div>
-                                <div class="item-shape">
-                                    <img src="<?php echo e(asset('assets/images/shape/shape-1.svg')); ?>" alt="Shape" />
-                                </div>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="title"><a href="service-details.html">Future with Green Energy</a></h4>
-                                <div class="desc">
-                                    <p>
-                                        All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                        chunks as necessary, making words,
-                                    </p>
-                                </div>
-                                <div class="read-more">
-                                    <a class="link" href="service-details.html">Read More <i
-                                    class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  </div> 
             </div>
         </section>
-        <!--=========== Service Section End =========-->
+        <!--=========== Project Section End =========-->
 
         <!--=========== Counter Section Start =========-->
         <section class="tj-counter-section">
@@ -350,7 +252,7 @@
                                 </div>
                                 <div class="counter-number">
                                     <div class="tj-count"><span class="odometer" data-count="48">0</span>+</div>
-                                    <span class="sub-title">Years Experience</span>
+                                    <span class="sub-title">Année d'Experience</span>
                                 </div>
                             </div>
                             <div class="counter-item-two">
@@ -359,7 +261,7 @@
                                 </div>
                                 <div class="counter-number">
                                     <div class="tj-count"><span class="odometer" data-count="239">0</span>+</div>
-                                    <span class="sub-title">Projects Completed</span>
+                                    <span class="sub-title">Projets Complets</span>
                                 </div>
                             </div>
                             <div class="counter-item-two">
@@ -368,18 +270,10 @@
                                 </div>
                                 <div class="counter-number">
                                     <div class="tj-count"><span class="odometer" data-count="230">0</span>+</div>
-                                    <span class="sub-title">Happy Customers</span>
+                                    <span class="sub-title">Clients Contents</span>
                                 </div>
                             </div>
-                            <div class="counter-item-two">
-                                <div class="counter-icon">
-                                    <i class="flaticon-timeline"></i>
-                                </div>
-                                <div class="counter-number">
-                                    <div class="tj-count"><span class="odometer" data-count="380">0</span>+</div>
-                                    <span class="sub-title">Awards Milestones</span>
-                                </div>
-                            </div>
+                             
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-7">
@@ -458,16 +352,16 @@
                     <div class="col-lg-12">
                         <div class="team-content-area">
                             <div class="tj-sec-heading">
-                                <span class="sub-title">Our Team</span>
+                                <span class="sub-title">Notre Equipes et évènements récentes</span>
                                 <h2 class="sec-title">
-                                    Inspiring Interiors Exceptional <br />
-                                    <span>Of Experiences</span>
+                                    Evènements marquantes <br />
+                                    <span>de 2024</span>
                                 </h2>
                             </div>
                             <div class="right-content">
                                 <p>
-                                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse fugiat quo
-                                    voluptas nulla pariatur?"
+                                    Pour mener a bien le projets , les parts sociales representant 40% du capital
+                                     de l'entreprise on ete mis a la disposition du public .
                                 </p>
                             </div>
                         </div>
@@ -477,7 +371,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="tj-team-item">
                             <div class="team-image">
-                                <img src="<?php echo e(asset('assets/images/team/team-1.jpg')); ?>" alt="Image" />
+                                <img src="<?php echo e(asset('assets/images/team/t1.jpeg')); ?>" alt="Image" />
                             </div>
                             <div class="team-content">
                                 <div class="team-auother">
@@ -511,7 +405,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="tj-team-item">
                             <div class="team-image">
-                                <img src="<?php echo e(asset('assets/images/team/team-2.jpg')); ?>" alt="Image" />
+                                <img src="<?php echo e(asset('assets/images/team/t2.jpeg')); ?>" alt="Image" />
                             </div>
                             <div class="team-content">
                                 <div class="team-auother">
@@ -545,7 +439,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="tj-team-item">
                             <div class="team-image">
-                                <img src="<?php echo e(asset('assets/images/team/team-3.jpg')); ?>" alt="Image" />
+                                <img src="<?php echo e(asset('assets/images/team/t3.jpeg')); ?>" alt="Image" />
                             </div>
                             <div class="team-content">
                                 <div class="team-auother">
@@ -579,7 +473,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="tj-team-item">
                             <div class="team-image">
-                                <img src="<?php echo e(asset('assets/images/team/team-4.jpg')); ?>" alt="Image" />
+                                <img src="<?php echo e(asset('assets/images/team/t6.jpeg')); ?>" alt="Image" />
                             </div>
                             <div class="team-content">
                                 <div class="team-auother">
@@ -621,10 +515,11 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7">
                         <div class="tj-sec-heading">
-                            <span class="sub-title">Testimonial</span>
+                            <span class="sub-title">Témoignages</span>
                             <h2 class="sec-title">
-                                Check Our Clients <br />
-                                <span>Feedback</span>
+                                Avis des clients
+                                <br />
+                                <span>Experiences</span>
                             </h2>
                         </div>
                         <div class="swiper tj-testimonial-slider">
@@ -633,14 +528,15 @@
                                     <div class="tj-testimonial-item">
                                         <div class="desc">
                                             <p>
-                                                ‘’Lorem Ipsum is not simply random text. It has roots in a piece of
-                                                classical Latin literature from 45 BC, making it over 2000 years
-                                                old. Richard McClintock, a Latin professor at Hampden’’
+                                                ‘’J'ai commencé à investir en bourse il y a quelques années et j'ai réalisé des 
+                                                profits conséquents. Je suis convaincu que l'investissement en bourse est un 
+                                                excellent moyen de faire fructifier son argent sur le long terme. Bien sûr, il 
+                                                est important de se renseigner et de prendre le temps de bien choisir ses investissements.’’
                                             </p>
                                         </div>
                                         <div class="testimonial-auother">
                                             <div class="auother-image">
-                                                <img src="<?php echo e(asset('assets/images/testimonial/testi-small-1.png')); ?>" alt="Image" />
+                                                <img src="<?php echo e(asset('assets/images/testimonial/te1.jpg')); ?>" alt="Image" />
                                             </div>
                                             <div class="auother-header">
                                                 <h5 class="title">
@@ -655,14 +551,14 @@
                                     <div class="tj-testimonial-item">
                                         <div class="desc">
                                             <p>
-                                                ‘’Lorem Ipsum is not simply random text. It has roots in a piece of
-                                                classical Latin literature from 45 BC, making it over 2000 years
-                                                old. Richard McClintock, a Latin professor at Hampden’’
+                                                ‘’J'ai investi dans une jeune entreprise il y a un an et je suis très satisfait 
+                                                des résultats. L'entreprise est en pleine croissance et je suis convaincu qu'elle 
+                                                a un grand potentiel. Je suis ravi d'avoir participé à son développement.’’
                                             </p>
                                         </div>
                                         <div class="testimonial-auother">
                                             <div class="auother-image">
-                                                <img src="<?php echo e(asset('assets/images/testimonial/testi-small-2.png')); ?>" alt="Image" />
+                                                <img src="<?php echo e(asset('assets/images/testimonial/te2.jpg')); ?>" alt="Image" />
                                             </div>
                                             <div class="auother-header">
                                                 <h5 class="title">
@@ -677,14 +573,15 @@
                                     <div class="tj-testimonial-item">
                                         <div class="desc">
                                             <p>
-                                                ‘’Lorem Ipsum is not simply random text. It has roots in a piece of
-                                                classical Latin literature from 45 BC, making it over 2000 years
-                                                old. Richard McClintock, a Latin professor at Hampden’’
+                                                ‘’J'ai souscrit un contrat d'assurance-vie il y a plusieurs années et je 
+                                                suis très satisfait de mon rendement. C'est un excellent moyen de se protéger
+                                                 financièrement et de préparer sa retraite. Je recommande vivement l'assurance-vie 
+                                                 à tous ceux qui recherchent un placement sûr et fiable.’’
                                             </p>
                                         </div>
                                         <div class="testimonial-auother">
                                             <div class="auother-image">
-                                                <img src="<?php echo e(asset('assets/images/testimonial/testi-small-3.png')); ?>" alt="Image" />
+                                                <img src="<?php echo e(asset('assets/images/testimonial/te3.jpg')); ?>" alt="Image" />
                                             </div>
                                             <div class="auother-header">
                                                 <h5 class="title">
@@ -710,17 +607,17 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="testimonial-image">
-                                            <img src="<?php echo e(asset('assets/images/testimonial/testi-big-1.jpg')); ?>" alt="Image" />
+                                            <img src="<?php echo e(asset('assets/images/testimonial/te1.jpg')); ?>" alt="Image" />
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="testimonial-image">
-                                            <img src="<?php echo e(asset('assets/images/testimonial/testi-big-2.jpg')); ?>" alt="Image" />
+                                            <img src="<?php echo e(asset('assets/images/testimonial/te2.jpg')); ?>" alt="Image" />
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="testimonial-image">
-                                            <img src="<?php echo e(asset('assets/images/testimonial/testi-big-3.jpg')); ?>" alt="Image" />
+                                            <img src="<?php echo e(asset('assets/images/testimonial/te3.jpg')); ?>" alt="Image" />
                                         </div>
                                     </div>
                                 </div>
@@ -736,266 +633,11 @@
         <!--=========== Testimonial Section End =========-->
 
         <!--=========== Faq Section Start =========-->
-        <section class="tj-faq-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="tj-sec-heading-four text-center">
-                            <span class="sub-title">Our FAQ</span>
-                            <h2 class="sec-title">Frequently Asked <span>Question</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="accordion" id="ItemOne">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        1. What is Included in your Services?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#ItemOne">
-                                    <div class="accordion-body">
-                                        <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                            majority have suffered alteration in.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        2. What Warranties do I Have For Installation?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#ItemOne">
-                                    <div class="accordion-body">
-                                        <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                            majority have suffered alteration in.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        3. How fast I get my Order?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#ItemOne">
-                                    <div class="accordion-body">
-                                        <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                            majority have suffered alteration in.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour">
-                                        4. What are the advantages of solar energy?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                    data-bs-parent="#ItemOne">
-                                    <div class="accordion-body">
-                                        <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                            majority have suffered alteration in.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="accordion" id="ItemTwo">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTen">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                                        5. How Much do Energy Panels Cost?
-                                    </button>
-                                </h2>
-                                <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
-                                    data-bs-parent="#ItemTwo">
-                                    <div class="accordion-body">
-                                        <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                            majority have suffered alteration in.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        6. How Mech Energy Can a Solar Panel Generate?
-                                    </button>
-                                </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                                    data-bs-parent="#ItemTwo">
-                                    <div class="accordion-body">
-                                        <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                            majority have suffered alteration in.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSeven">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSeven" aria-expanded="false"
-                                        aria-controls="collapseSeven">
-                                        7. What are the advantages of solar energy?
-                                    </button>
-                                </h2>
-                                <div id="collapseSeven" class="accordion-collapse collapse"
-                                    aria-labelledby="headingSeven" data-bs-parent="#ItemTwo">
-                                    <div class="accordion-body">
-                                        <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                            majority have suffered alteration in.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingEight">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseEight" aria-expanded="false"
-                                        aria-controls="collapseEight">
-                                        8. What is Included in your Services?
-                                    </button>
-                                </h2>
-                                <div id="collapseEight" class="accordion-collapse collapse"
-                                    aria-labelledby="headingEight" data-bs-parent="#ItemTwo">
-                                    <div class="accordion-body">
-                                        <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                            majority have suffered alteration in.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingNine">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseNine" aria-expanded="false"
-                                        aria-controls="collapseNine">
-                                        9. Majority have do Energy Panels Cost?
-                                    </button>
-                                </h2>
-                                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
-                                    data-bs-parent="#ItemTwo">
-                                    <div class="accordion-body">
-                                        <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                            majority have suffered alteration in.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!--=========== Faq Section End =========-->
 
         <!--=========== Blog Section Start =========-->
-        <section class="tj-blog-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="blog-content-area">
-                            <div class="tj-sec-heading-four">
-                                <span class="sub-title">Recent Blog Article</span>
-                                <h2 class="sec-title">Latest Story <span>From Blog</span></h2>
-                            </div>
-                            <div class="blog-desc">
-                                <p>
-                                    Lorem Ipsum has been the industry's standard text ever since the 1500s,
-                                    unchanged.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tj-blog-item">
-                            <div class="blog-image">
-                                <a href="blog-details.html"><img src="<?php echo e(asset('assets/images/blog/blog-1.jpg')); ?>" alt="Image" /></a>
-                            </div>
-                            <div class="blog-text-area">
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><i class="flaticon-calendar"></i> Dec 1, 2023</li>
-                                        <li><i class="flaticon-chat"></i> Comment (1)</li>
-                                    </ul>
-                                </div>
-                                <div class="blog-content">
-                                    <h5 class="title">
-                                        <a href="blog-details.html">Winds of Change in the Tubine Service Industry</a>
-                                    </h5>
-                                    <div class="tj-blog-button d-flex">
-                                        <a class="tj-secondary-btn btn" href="blog-details.html">Read More <i
-                                                class="flaticon-right-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tj-blog-item">
-                            <div class="blog-image">
-                                <a href="blog-details.html"><img src="<?php echo e(asset('assets/images/blog/blog-2.jpg')); ?>" alt="Image" /></a>
-                            </div>
-                            <div class="blog-text-area">
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><i class="flaticon-calendar"></i> May 7, 2023</li>
-                                        <li><i class="flaticon-chat"></i> Comment (1)</li>
-                                    </ul>
-                                </div>
-                                <div class="blog-content">
-                                    <h5 class="title">
-                                        <a href="blog-details.html">Saw Scond Earth Do Grass Very Hot Wathers</a>
-                                    </h5>
-                                    <div class="tj-blog-button d-flex">
-                                        <a class="tj-secondary-btn btn" href="blog-details.html">Read More <i
-                                                class="flaticon-right-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tj-blog-item">
-                            <div class="blog-image">
-                                <a href="blog-details.html"><img src="<?php echo e(asset('assets/images/blog/blog-3.jpg')); ?>" alt="Image" /></a>
-                            </div>
-                            <div class="blog-text-area">
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><i class="flaticon-calendar"></i> Jan 5, 2023</li>
-                                        <li><i class="flaticon-chat"></i> Comment (1)</li>
-                                    </ul>
-                                </div>
-                                <div class="blog-content">
-                                    <h5 class="title">
-                                        <a href="blog-details.html">Heaced Maece Nasera Tortor Convallis Dise Ann
-                                            Enget</a>
-                                    </h5>
-                                    <div class="tj-blog-button d-flex">
-                                        <a class="tj-secondary-btn btn" href="blog-details.html">Read More <i
-                                                class="flaticon-right-arrow"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!--=========== Blog Section End =========-->
 
         <!--=========== Video Section Start =========-->

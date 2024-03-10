@@ -83,14 +83,15 @@ START: Theme Default CSS
   --tj-color-common-black: #000000;
   --tj-color-heading-primary: #323c45;
   --tj-color-text-body: #717171;
-  --tj-color-theme-primary: #006e28;
-  --tj-color-theme-secondary: #d5ca00;
+  --tj-color-theme-primary: #00782c;
+  --tj-color-theme-secondary: #363635;
   --tj-color-theme-bg: #fafafc;
   --tj-color-grey-1: #bdc5ca;
   --tj-color-grey-2: #f2f5f9;
   --tj-color-grey-3: #dcdee7;
   --tj-color-grey-4: #06080a;
   --tj-color-grey-5: #131a21;
+  --tj-color-hello: #FFD40B;
   --tj-color-light-1: #fafafc;
   --tj-color-light-2: #ecfff3;
   --tj-color-light-3: #f0fff5;
@@ -104,6 +105,7 @@ START: Theme Default CSS
   --tj-color-border-2: #a1acb3;
   --tj-color-border-3: #aaeac1;
   --tj-color-border-4: #C5FDD9;
+  --vert: #00782c;
 }
 
 * {

@@ -8,10 +8,10 @@
                             <div class="col-lg-12">
                                 <div class="gallery-text">
                                     <div class="tj-sec-heading">
-                                        <h2 class="sec-title">Get Free Consultancy?</h2>
+                                        <h2 class="sec-title">Obtenir un conseil gratuit ?</h2>
                                         <div class="gallery-contact">
-                                            Discuss about your project to call
-                                            <a href="tel:+0156789000"> +0156 789 000</a>
+                                            Pour discuter de votre projet, appelez le
+                                            <a href="tel:+0156789000"> +(237) 698 962 615</a> ou
                                         </div>
                                     </div>
                                 </div>
@@ -50,68 +50,6 @@
             </div>
         </section>
         <!--=========== Subscribe Section End =========-->
-
-        <!--=========== Gallery Section Start =========-->
-        <section class="tj-gallery-section">
-            <div class="container-fluid p-0">
-                <div class="widget_gallery popup-gallery">
-                    <div class="swiper tj-gallery-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a class="tj-gallery-item" href="<?php echo e(asset('assets/images/gallery/gallery-6.jpg')); ?>">
-                                    <div class="image-box" data-bg-image="<?php echo e(asset('assets/images/gallery/gallery-1.jpg')); ?>">
-                                        <div class="gallery-icon">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a class="tj-gallery-item" href="<?php echo e(asset('assets/images/gallery/gallery-7.jpg')); ?>">
-                                    <div class="image-box" data-bg-image="<?php echo e(asset('assets/images/gallery/gallery-2.jpg')); ?>">
-                                        <div class="gallery-icon">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a class="tj-gallery-item" href="<?php echo e(asset('assets/images/gallery/gallery-8.jpg')); ?>">
-                                    <div class="image-box" data-bg-image="<?php echo e(asset('assets/images/gallery/gallery-3.jpg')); ?>">
-                                        <div class="gallery-icon">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a class="tj-gallery-item" href="<?php echo e(asset('assets/images/gallery/gallery-9.jpg')); ?>">
-                                    <div class="image-box" data-bg-image="<?php echo e(asset('assets/images/gallery/gallery-4.jpg')); ?>">
-                                        <div class="gallery-icon">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a class="tj-gallery-item" href="<?php echo e(asset('assets/images/gallery/gallery-10.jpg')); ?>">
-                                    <div class="image-box" data-bg-image="<?php echo e(asset('assets/images/gallery/gallery-5.jpg')); ?>">
-                                        <div class="gallery-icon">
-                                            <i class="fa-regular fa-plus"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="gallery-navigation">
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--=========== Gallery Section End =========-->
     </main>
 
     <!--=========== Footer Area Start =========-->
@@ -123,12 +61,13 @@
                         <div class="footer-widget footer1-col-1">
                             <div class="footer-info">
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="<?php echo e(asset('assets/images/logo1.png')); ?>" alt="Logo" /></a>
+                                    <a href="index.html"><img src="<?php echo e(asset('assets/images/im2.jpg')); ?>" alt="Logo" /></a>
                                 </div>
                                 <div class="desc">
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered.
+                                       
+TANDIS Invest est véhicule hybride de financement en capital destiné à promouvoir 
+l’entrepreneuriat africain innovant et à fort impact environnemental et social via l’épargne des africaines .
                                     </p>
                                 </div>
                                 <div class="footer-share">
@@ -151,11 +90,11 @@
                             </div>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Our Services</a></li>
-                                    <li><a href="#">Our Blog</a></li>
-                                    <li><a href="#">Our Team</a></li>
+                                    <li><a href="#">Acceuil</a></li>
+                                    <li><a href="#">A propos De Nous</a></li>
+                                    <li><a href="#">Nos Services</a></li>
+                                    <li><a href="#">Nos Projets</a></li>
+                                    <li><a href="#">Contact Nous</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -173,11 +112,11 @@
                                     </li>
                                     <li>
                                         <i class="flaticon-open"></i>
-                                        <a href="mailto:solarplus@gmail.com">Solarplus@gmail.com </a>
-                                        <a href="mailto:infosolarplus@gmail.com">infosolarplus@gmail.com</a>
+                                        <a href="mailto:solarplus@gmail.com">admin@tandisinvest.cm </a>
+                                        <a href="mailto:infosolarplus@gmail.com">contact@tandisinvest.cm</a>
                                     </li>
                                     <li>
-                                        <i class="flaticon-phone"></i><a href="tel:(1234)5678900">(1234)-567-8900 </a>
+                                        <i class="flaticon-phone"></i><a href="tel:(1234)5678900"> +(237) 698 962 615</a>
                                         <a class="d-block" href="tel:1234567890000">123-456-7890000</a>
                                     </li>
                                 </ul>
@@ -192,8 +131,8 @@
                             <div class="footer-newsletter">
                                 <div class="desc">
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered.
+                                        Donner du sens à son argent en ligne
+Investir dans des petites et moyennes entreprises africaines solides et prometteuses est la solution que TANDIS INVEST a la grosse ambition de mettre dans les mains de la diaspora africaine, des épargnants européens et des personnes locales.
                                     </p>
                                 </div>
                                 <div class="footer-form">

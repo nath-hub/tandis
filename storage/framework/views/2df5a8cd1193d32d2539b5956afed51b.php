@@ -3,7 +3,7 @@
     <div class="animation-preloader">
         <div class="spinner">
             <div class="loader-icon">
-                <img src="assets/images/logo1.png" alt="Solar & Renewable Energy HTML Template" />
+                <img src="assets/images/im9.png" alt="Tandis Investement" />
             </div>
         </div>
         <div class="txt-loading">
@@ -26,7 +26,7 @@
             <span data-text-preloader="T" class="letters-loading"> T </span>
         </div>
     </div>
-    <button class="tj-header-btn btn">Cancel Preloader</button>
+    <button class="tj-header-btn btn">Annuler Preloader</button>
 </div>
 <!-- Preloader end -->
 
@@ -35,7 +35,7 @@
 <div class="tj-offcanvas-area">
     <div class="tj-offcanvas-header d-flex align-items-center justify-content-between">
         <div class="logo-area text-center">
-            <a href="index.html"><img src="assets/images/logos/logo1.png" alt="Logo" /></a>
+            <a href="index.html"><img src="assets/images/im1.jpg" alt="Logo" /></a>
         </div>
         <div class="offcanvas-icon">
             <a id="canva_close" href="#">
@@ -65,12 +65,12 @@
                     <li><i class="flaticon-location"></i> 2972 Westheimer Rd. Santa Ana, Illinois 937949</li>
                     <li>
                         <i class="flaticon-open"></i>
-                        <a href="mailto:solarplus@gmail.com">Solarplus@gmail.com </a>
-                        <a href="mailto:infosolarplus@gmail.com">infosolarplus@gmail.com</a>
+                        <a href="mailto:contact@tandisinvest.cm">contact@tandisinvest.cm </a>
+                        <a href="mailto:admin@tandisinvest.cm">admin@tandisinvest.cm</a>
                     </li>
                     <li>
-                        <i class="flaticon-phone"></i><a href="tel:(1234)5678900">(1234)-567-8900 </a>
-                        <a class="d-block" href="tel:1234567890000">123-456-7890000</a>
+                        <i class="flaticon-phone"></i><a href="tel:+(237) 698 962 615">+(237) 698 962 615 </a>
+                        <a class="d-block" href="tel:+(237) 698 962 615">+(237) 698 962 615</a>
                     </li>
                 </ul>
             </div>
@@ -159,7 +159,7 @@
                             <ul>
                                 <li><i class="flaticon-back-in-time"></i>Mon - Sat - 9PM</li>
                                 <li>
-                                    <i class="flaticon-phone"></i><a href="tel:(+1)-12345678900">(+237)-123 456 789
+                                    <i class="flaticon-phone"></i><a href="tel:+(237) 698 962 615">+(237) 698 962 615
                                         00</a>
                                 </li>
                             </ul>
@@ -186,7 +186,7 @@
                     <div class="bottom-content-area">
                         <div class="menu-area">
                             <div class="logo-area">
-                                <a href="index.html"><img src="<?php echo e(asset('assets/images/logos.jpeg')); ?>" alt="Logo" /></a>
+                                <a href="index.html"><img src="<?php echo e(asset('assets/images/im6.jpg')); ?>" alt="Logo" /></a>
                             </div>
                             <div class="tj-menu-area d-lg-block d-none">
                                 <nav>
@@ -244,7 +244,7 @@
                     <div class="bottom-content-area">
                         <div class="menu-area">
                             <div class="logo-area">
-                                <a href="index.html"><img src="<?php echo e(asset('assets/images/logos.jpeg')); ?>" alt="Logo" /></a>
+                                <a href="index.html"><img src="<?php echo e(asset('assets/images/im6.jpg')); ?>" alt="Logo" /></a>
                             </div>
                             <div class="tj-menu-area d-lg-block d-none" id="main-menu">
                                 <nav id="mobile-menu">

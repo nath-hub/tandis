@@ -9,7 +9,7 @@
 
     <!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="{{asset('assets/images/logo1.png')}}" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/fav.svg')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/im8.png')}}" />
 
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
