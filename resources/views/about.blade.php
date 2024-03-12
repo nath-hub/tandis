@@ -5,9 +5,11 @@
 
 <body>
     
-    @include('element.header' )
-
-
+    @include('element.prehead')
+ 
+<div class="py-5">
+  mt-sm-3 mb-lg-5
+</div>
 </body>
 @include('element.footer' )
 

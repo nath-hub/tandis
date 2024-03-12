@@ -62,7 +62,7 @@
             </div>
             <div class="footer-contact">
                 <ul>
-                    <li><i class="flaticon-location"></i> 2972 Westheimer Rd. Santa Ana, Illinois 937949</li>
+                    <li><i class="flaticon-location"></i> Yaoundé Cameroun</li>
                     <li>
                         <i class="flaticon-open"></i>
                         <a href="mailto:contact@tandisinvest.cm">contact@tandisinvest.cm </a>
@@ -150,35 +150,39 @@
 
 <!-- start: Header Area -->
 <header class="tj-header-area header-absolute header-1">
-    <div class="tj-header-topbar-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="header-content-area">
-                        <div class="header-info">
-                            <ul>
-                                <li><i class="flaticon-back-in-time"></i>Mon - Sat - 9PM</li>
-                                <li>
-                                    <i class="flaticon-phone"></i><a href="tel:+(237) 698 962 615">+(237) 698 962 615
-                                        00</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="header-share">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+   
+
+ <div class="tj-header-topbar-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="header-content-area">
+                    <div class="header-info">
+                        <ul>
+                            <li><i class="flaticon-back-in-time"></i>Mon - Sat - 9PM</li>
+                            <li>
+                                <i class="flaticon-phone"></i><a href="tel:+(237) 698 962 615">+(237) 698 962 615
+                                    00</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-share">
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
     <div class="tj-bottom-content-area">
         <div class="container">
             <div class="row">

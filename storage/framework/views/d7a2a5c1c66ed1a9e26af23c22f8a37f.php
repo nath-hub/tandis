@@ -20,4 +20,37 @@
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/magnific-popup.css')); ?>" />
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/meanmenu.css')); ?>" />
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/main.css')); ?>" />
-</head><?php /**PATH /home/ubix-group/sites/TandisApp/resources/views/element/head.blade.php ENDPATH**/ ?>
+</head>
+
+<!-- Preloader start -->
+<div id="preloader" class="preloader">
+    <div class="animation-preloader">
+        <div class="spinner">
+            <div class="loader-icon">
+                <img src="assets/images/im9.png" alt="Tandis Investement" />
+            </div>
+        </div>
+        <div class="txt-loading">
+            <span data-text-preloader="T" class="letters-loading"> T </span>
+            <span data-text-preloader="A" class="letters-loading"> A </span>
+            <span data-text-preloader="N" class="letters-loading"> N </span>
+            <span data-text-preloader="D" class="letters-loading"> D </span>
+            <span data-text-preloader="I" class="letters-loading"> I </span>
+            <span data-text-preloader="S" class="letters-loading"> S </span>
+            <span data-text-preloader="-" class="letters-loading"> - </span>
+            <span data-text-preloader="I" class="letters-loading"> I </span>
+            <span data-text-preloader="N" class="letters-loading"> N </span>
+            <span data-text-preloader="V" class="letters-loading"> V </span>
+            <span data-text-preloader="E" class="letters-loading"> E </span>
+            <span data-text-preloader="S" class="letters-loading"> S </span>
+            <span data-text-preloader="T" class="letters-loading"> T </span>
+            <span data-text-preloader="M" class="letters-loading"> M </span>
+            <span data-text-preloader="E" class="letters-loading"> E </span>
+            <span data-text-preloader="N" class="letters-loading"> N </span>
+            <span data-text-preloader="T" class="letters-loading"> T </span>
+        </div>
+    </div>
+    <button class="tj-header-btn btn">Annuler Preloader</button>
+</div>
+<!-- Preloader end -->
+<?php /**PATH /home/ubix-group/sites/TandisApp/resources/views/element/head.blade.php ENDPATH**/ ?>

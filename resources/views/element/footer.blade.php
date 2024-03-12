@@ -156,13 +156,7 @@ Investir dans des petites et moyennes entreprises africaines solides et promette
                                     Reserved.
                                 </p>
                             </div>
-                            <div class="copyright-menu">
-                                <ul>
-                                    <li><a href="#">Setting & Privacy</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Support</a></li>
-                                </ul>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

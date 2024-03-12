@@ -1,35 +1,4 @@
- <!-- Preloader start -->
- <div id="preloader" class="preloader">
-    <div class="animation-preloader">
-        <div class="spinner">
-            <div class="loader-icon">
-                <img src="assets/images/im9.png" alt="Tandis Investement" />
-            </div>
-        </div>
-        <div class="txt-loading">
-            <span data-text-preloader="T" class="letters-loading"> T </span>
-            <span data-text-preloader="A" class="letters-loading"> A </span>
-            <span data-text-preloader="N" class="letters-loading"> N </span>
-            <span data-text-preloader="D" class="letters-loading"> D </span>
-            <span data-text-preloader="I" class="letters-loading"> I </span>
-            <span data-text-preloader="S" class="letters-loading"> S </span>
-            <span data-text-preloader="-" class="letters-loading"> - </span>
-            <span data-text-preloader="I" class="letters-loading"> I </span>
-            <span data-text-preloader="N" class="letters-loading"> N </span>
-            <span data-text-preloader="V" class="letters-loading"> V </span>
-            <span data-text-preloader="E" class="letters-loading"> E </span>
-            <span data-text-preloader="S" class="letters-loading"> S </span>
-            <span data-text-preloader="T" class="letters-loading"> T </span>
-            <span data-text-preloader="M" class="letters-loading"> M </span>
-            <span data-text-preloader="E" class="letters-loading"> E </span>
-            <span data-text-preloader="N" class="letters-loading"> N </span>
-            <span data-text-preloader="T" class="letters-loading"> T </span>
-        </div>
-    </div>
-    <button class="tj-header-btn btn">Annuler Preloader</button>
-</div>
-<!-- Preloader end -->
-
+ 
 <!-- start: Offcanvas Area -->
 <div id="tj-overlay-bg" class="tj-overlay-canvas"></div>
 <div class="tj-offcanvas-area">
@@ -62,7 +31,7 @@
             </div>
             <div class="footer-contact">
                 <ul>
-                    <li><i class="flaticon-location"></i> 2972 Westheimer Rd. Santa Ana, Illinois 937949</li>
+                    <li><i class="flaticon-location"></i> Yaoundé Cameroun</li>
                     <li>
                         <i class="flaticon-open"></i>
                         <a href="mailto:contact@tandisinvest.cm">contact@tandisinvest.cm </a>
@@ -150,35 +119,39 @@
 
 <!-- start: Header Area -->
 <header class="tj-header-area header-absolute header-1">
-    <div class="tj-header-topbar-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="header-content-area">
-                        <div class="header-info">
-                            <ul>
-                                <li><i class="flaticon-back-in-time"></i>Mon - Sat - 9PM</li>
-                                <li>
-                                    <i class="flaticon-phone"></i><a href="tel:+(237) 698 962 615">+(237) 698 962 615
-                                        00</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="header-share">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+   
+
+ <div class="tj-header-topbar-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="header-content-area">
+                    <div class="header-info">
+                        <ul>
+                            <li><i class="flaticon-back-in-time"></i>Mon - Sat - 9PM</li>
+                            <li>
+                                <i class="flaticon-phone"></i><a href="tel:+(237) 698 962 615">+(237) 698 962 615
+                                    00</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-share">
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
     <div class="tj-bottom-content-area">
         <div class="container">
             <div class="row">

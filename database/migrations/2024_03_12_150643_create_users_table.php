@@ -15,6 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('photo')->nullable();
+            $table->enum('statut', ['ACTIF', 'INACTIF'])->default('ACTIF');
+            $table->string('phone')->nullable()->unique();
+            $table->string('town')->nullable();
+            $table->date('birth_date')->nullable();
+            $table->string('country')->nullable();
+            $table->enum('type', ['ADMIN', 'ENTERPRISE', 'INVEST'])->default('INVEST');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
