@@ -12040,7 +12040,7 @@ START: Theme Breadcrumb CSS
 ----------------------------------------*/
 .breadcrumb-wrapper {
   padding-top: 275px;
-  padding-bottom: 176px;
+  padding-bottom: 10px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

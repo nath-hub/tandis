@@ -21,11 +21,21 @@ class UserStoreRequest extends FormRequest
      */
     public function rules(): array
     {
+
+        $routeName = $this->route()->getName();
+
+        if ($routeName === 'users.store') {
+            return [
+                "name" => "required|string",
+                "email" => 'required|email',
+                "phone" => 'required|string',
+                "password" => "required"
+            ];
+        }
         return [
-            "name" => "required|string",
+
             "email" => 'required|email',
-            "phone" => 'required|string',
-            "password" =>"required"
+            "password" => "required"
         ];
     }
 }

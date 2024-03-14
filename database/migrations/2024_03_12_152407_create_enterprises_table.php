@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('commercial_register');
             $table->string('name_enterprise');
             $table->string('address');
+            $table->string('phase')->nullable();
+            $table->date('date_debut')->nullable();
+            $table->date('date_fin')->nullable();
+            $table->integer('prix_phase')->nullable();
+            $table->string('statut_phase')->nullable();
             $table->string('objectif');
             $table->integer('montant_actuel');
             $table->string('web_site')->nullable();

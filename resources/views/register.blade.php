@@ -40,20 +40,33 @@
                         @csrf
                         <div class="form-group pb-1 border mb-3" style="border-radius: 10px;">
                             <input type="name" name="name" placeholder="Nom" class="form-control"
-                                aria-describedby="nameHelp">
+                               value="{{old('name')}}" aria-describedby="nameHelp">
+
+                               @if ($errors->has('name'))
+                        <span class="text-danger text-left">{{ $errors->first('name') }}</span>
+                    @endif
                         </div>
                         <div class="form-group border mb-3" style="border-radius: 10px;">
                             <input type="email" name="email" placeholder="Email" class="form-control"
-                                aria-describedby="emailHelp">
+                            value="{{old('email')}}"  aria-describedby="emailHelp">
+                            @if ($errors->has('email'))
+                            <span class="text-danger text-left">{{ $errors->first('email') }}</span>
+                        @endif
                         </div>
 
                         <div class="form-group pb-1 border mb-3" style="border-radius: 10px;">
                             <input type="number" name="phone" placeholder="Phone" class="form-control"
-                                aria-describedby="phoneHelp">
+                            value="{{old('phone')}}" aria-describedby="phoneHelp">
+                            @if ($errors->has('phone'))
+                            <span class="text-danger text-left">{{ $errors->first('phone') }}</span>
+                        @endif
                         </div>
 
                         <div class="form-group  border mb-3" style="border-radius: 10px;">
-                            <input type="password" name="password" placeholder="Password" class="form-control">
+                            <input type="password" name="password" value="{{old('password')}}" placeholder="Password" class="form-control">
+                            @if ($errors->has('password'))
+                            <span class="text-danger text-left">{{ $errors->first('password') }}</span>
+                        @endif
                         </div>
 
                         <div class="form-check mb-3">

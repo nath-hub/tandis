@@ -77,7 +77,7 @@
                                                 </defs>
                                                 <text font-size="16">
                                                     <textPath xlink:href="#circle" class="shape-1">
-                                                        Tandis Investement . Tandis Investement .
+                                                        Tandis . Investement .
                                                     </textPath>
                                                 </text>
                                             </svg>

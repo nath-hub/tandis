@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
-  @include('element.head' ) 
-
 <body>
-    
-    @include('element.prehead')
- 
-<div class="py-5">
-  mt-sm-3 mb-lg-5
-</div>
-</body>
-@include('element.footer' )
 
+  @include('element.head')
+  @include('element.header')
+
+
+  <section class="breadcrumb-wrapper" data-bg-image="{{ asset('assets/images/im3.jpg') }}">
+
+  </section>
+
+  @include('element.footer')
 </html>
