@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,28 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+// Route::get('/register', function () {
+//     return view('register');
+// });
+
+Route::get('/log', [UserController::class, 'log']);
+
+Route::post('/login', [UserController::class, 'login'])->name('login');
+
+// Route::resource('users', UserController::class);
+    
+Route::group(['prefix' => 'users'], function() {
+    Route::get('/', [UserController::class, 'index'])->name('users.index');
+    Route::get('/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/create', [UserController::class, 'store'])->name('users.store');
+    Route::get('/{user}/show', [UserController::class, 'show'])->name('users.show');
+    Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::patch('/{user}/update', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/{user}/delete', [UserController::class, 'destroy'])->name('users.destroy');
+});
+ 

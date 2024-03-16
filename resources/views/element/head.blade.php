@@ -9,7 +9,7 @@
 
     <!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="{{asset('assets/images/logo1.png')}}" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/fav.svg')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/im8.png')}}" />
 
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
@@ -21,3 +21,35 @@
     <link rel="stylesheet" href="{{asset('assets/css/meanmenu.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
 </head>
+
+<!-- Preloader start -->
+<div id="preloader" class="preloader">
+    <div class="animation-preloader">
+        <div class="spinner">
+            <div class="loader-icon">
+                <img src="assets/images/im9.png" alt="Tandis Investement" />
+            </div>
+        </div>
+        <div class="txt-loading">
+            <span data-text-preloader="T" class="letters-loading"> T </span>
+            <span data-text-preloader="A" class="letters-loading"> A </span>
+            <span data-text-preloader="N" class="letters-loading"> N </span>
+            <span data-text-preloader="D" class="letters-loading"> D </span>
+            <span data-text-preloader="I" class="letters-loading"> I </span>
+            <span data-text-preloader="S" class="letters-loading"> S </span>
+            <span data-text-preloader="-" class="letters-loading"> - </span>
+            <span data-text-preloader="I" class="letters-loading"> I </span>
+            <span data-text-preloader="N" class="letters-loading"> N </span>
+            <span data-text-preloader="V" class="letters-loading"> V </span>
+            <span data-text-preloader="E" class="letters-loading"> E </span>
+            <span data-text-preloader="S" class="letters-loading"> S </span>
+            <span data-text-preloader="T" class="letters-loading"> T </span>
+            <span data-text-preloader="M" class="letters-loading"> M </span>
+            <span data-text-preloader="E" class="letters-loading"> E </span>
+            <span data-text-preloader="N" class="letters-loading"> N </span>
+            <span data-text-preloader="T" class="letters-loading"> T </span>
+        </div>
+    </div>
+    <button class="tj-header-btn btn">Annuler Preloader</button>
+</div>
+<!-- Preloader end -->
