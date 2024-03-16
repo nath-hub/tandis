@@ -11,6 +11,7 @@
     <link rel="apple-touch-icon" href="{{asset('assets/images/logo1.png')}}" />
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/im8.png')}}" />
 
+    <link rel="stylesheet" href="https://github.com/FortAwesome/Font-Awesome">
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/font-awesome-pro.min.css')}}" />
