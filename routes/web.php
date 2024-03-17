@@ -36,7 +36,7 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 
 // Route::resource('users', UserController::class);
     
-Route::group(['prefix' => 'users'], function() {
+Route::group(['prefix' => 'tandis/public/users'], function() {
     Route::get('/', [UserController::class, 'index'])->name('users.index');
     Route::get('/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/create', [UserController::class, 'store'])->name('users.store');
