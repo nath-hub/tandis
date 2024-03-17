@@ -66,7 +66,7 @@
 
                         </div>
                         <div class="pb-4">
-                            Vous n'avez pas de compte ? <a style= 'color:green;' href="/users">S'inscrire'</a> <br />
+                            Vous n'avez pas de compte ? <a style= 'color:green;' href="/tandis/public/users">S'inscrire'</a> <br />
                         </div>
                     
                         <a href="#section1" style= 'color:green;'>Mot de passe oublié</a>

@@ -11,6 +11,7 @@
     <link rel="apple-touch-icon" href="<?php echo e(asset('assets/images/logo1.png')); ?>" />
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo e(asset('assets/images/im8.png')); ?>" />
 
+    <link rel="stylesheet" href="https://github.com/FortAwesome/Font-Awesome">
     <!-- CSS here -->
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/bootstrap.min.css')); ?>" />
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/font-awesome-pro.min.css')); ?>" />
@@ -52,5 +53,4 @@
     </div>
     <button class="tj-header-btn btn">Annuler Preloader</button>
 </div>
-<!-- Preloader end -->
-<?php /**PATH /home/ubix-group/sites/TandisApp/resources/views/element/head.blade.php ENDPATH**/ ?>
+<!-- Preloader end --><?php /**PATH /home/ubix-group/sites/TandisApp/resources/views/element/head.blade.php ENDPATH**/ ?>
