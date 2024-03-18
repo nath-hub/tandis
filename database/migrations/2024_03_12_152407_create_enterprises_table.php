@@ -13,20 +13,27 @@ return new class extends Migration
     {
         Schema::create('enterprises', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('user_id');
+            
             $table->string('siren')->nullable();
-            $table->string('commercial_register');
+            $table->string('commercial_register')->nullable();
             $table->string('name_enterprise');
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->string('phase')->nullable();
             $table->date('date_debut')->nullable();
             $table->date('date_fin')->nullable();
             $table->integer('prix_phase')->nullable();
             $table->string('statut_phase')->nullable();
-            $table->string('objectif');
-            $table->integer('montant_actuel');
+            $table->string('objectif')->nullable();
+            $table->integer('montant_actuel')->nullable();
             $table->string('web_site')->nullable();
             $table->string('description')->nullable();
-            $table->enum('state', ['ACTIF', 'INACTIF']);
+            $table->enum('state', ['ACTIF', 'INACTIF'])->default('INACTIF');
+ 
+            $table->index(["user_id"], "fk_user_enterprise");
+
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->softDeletes();
             $table->timestamps();

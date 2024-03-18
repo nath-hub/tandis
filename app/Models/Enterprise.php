@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Requests\UserUpdateRequest;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,4 +17,10 @@ class Enterprise extends Model
      * @var array
      */
     protected $guarded = ['id'];
+
+
+    public function user()
+    {
+        return $this->hasOne(UserUpdateRequest::class);
+    }
 }

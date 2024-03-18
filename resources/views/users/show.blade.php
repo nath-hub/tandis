@@ -48,21 +48,50 @@
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="gy-3">
+                                <table class="table caption-top">
+                                    <caption>Informations de utilisateur</caption>
 
-                                <h5 class="border bg-light">Nom : {{ $user->name }} </h5>
-                                <label class="border bg-light">Email: <strong>{{ $user->email }}</strong> </label>
-                                <div class="border bg-light">Téléphone : <strong>{{ $user->phone }}</strong> </div>
-                                <p class="border bg-light">Statut : <strong>{{ $user->statut }}</strong> </p>
-                                <p class="border bg-light">date de creation : <strong>{{ $user->created_at }}</strong>
-                                </p>
-                                <div class="border bg-light">Pays : <strong>{{ $user->country }}</strong> </div>
-                                <div class="border bg-light">Ville : <strong>{{ $user->town }}</strong></div>
-                                <div class="border bg-light">Date de naissance :
-                                    <strong>{{ $user->birth_date }}</strong>
-                                </div>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Nom : </th>
+                                            <td>{{ $user->name }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Email: </th>
+                                            <td>{{ $user->email }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Téléphone : </th>
+                                            <td>{{ $user->phone }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Statut: </th>
+                                            <td>{{ $user->statut }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Date de creation : </th>
+                                            <td>{{ $user->created_at }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Pays: </th>
+                                            <td>{{ $user->country }} </td>
+                                        </tr>
 
-                               
-                                
+                                        <tr>
+                                            <th scope="row">Ville : </th>
+                                            <td>{{ $user->town }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Date de naissance: </th>
+                                            <td>{{ $user->birth_date }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Type de compte: </th>
+                                            <td>{{ $user->type }} </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -105,12 +134,16 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6 p-3 float-right">
-                            <button class="btn btn-success"> Se déconnecter</button>
-                          </div>
-                      </div>
+                    <form action="{{ route('users.logout') }}" method="GET">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6 p-3 float-right">
+                                <button type="submit" class="btn btn-danger"> Se déconnecter</button>
+                            </div>
+                        </div>
+                    </form>
+
 
 
                 </div>
@@ -152,15 +185,50 @@
                         <div class="accordion-body">
                             <div class="py-5">
 
-                                <h5 class="p-3 border bg-light">Nom : Nath Nathalie</h5>
-                                <label class="p-3 border bg-light">Email: <strong>nath@gmail.com</strong> </label>
-                                <div class="p-3 border bg-light">Téléphone : <strong>677367627</strong> </div>
-                                <p class="p-3 border bg-light">Statut : <strong>ACTIF</strong> </p>
-                                <p class="p-3 border bg-light">date de creation : <strong>10/11/2022</strong> </p>
-                                <div class="p-3 border bg-light">Pays : <strong>Cameroun</strong> </div>
-                                <div class="p-3 border bg-light">Ville : <strong>Yaoundé</strong></div>
-                                <div class="p-3 border bg-light">Date de naissance : <strong>09/03/1999</strong> </div>
+                                <table class="table caption-top">
+                                    <caption>Informations de utilisateur</caption>
 
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Nom : </th>
+                                            <td>{{ $user->name }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Email: </th>
+                                            <td>{{ $user->email }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Téléphone : </th>
+                                            <td>{{ $user->phone }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Statut: </th>
+                                            <td>{{ $user->statut }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Date de creation : </th>
+                                            <td>{{ $user->created_at }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Pays: </th>
+                                            <td>{{ $user->country }} </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Ville : </th>
+                                            <td>{{ $user->town }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Date de naissance: </th>
+                                            <td>{{ $user->birth_date }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Type de compte: </th>
+                                            <td>{{ $user->type }} </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -206,13 +274,16 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6 p-3 float-right">
-                            <button class="btn btn-success"> Se déconnecter</button>
-                          </div>
-                      </div>
-                      
+                    <form action="{{ route('users.logout') }}" method="GET">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6 p-3 float-right">
+                                <button type="submit" class="btn btn-danger"> Se déconnecter</button>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
 
             </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ForgotPassword;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -34,9 +35,8 @@ Route::get('/log', [UserController::class, 'log']);
 
 Route::post('/login', [UserController::class, 'login'])->name('login');
 
-// Route::resource('users', UserController::class);
-    
-Route::group(['prefix' => 'tandis/public/users'], function() {
+
+Route::group(['prefix' => 'tandis/public/users'], function () {
     Route::get('/', [UserController::class, 'index'])->name('users.index');
     Route::get('/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/create', [UserController::class, 'store'])->name('users.store');
@@ -44,5 +44,9 @@ Route::group(['prefix' => 'tandis/public/users'], function() {
     Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::patch('/{user}/update', [UserController::class, 'update'])->name('users.update');
     Route::delete('/{user}/delete', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::get('/logout', [Usercontroller::class, 'logout'])->name('users.logout')
+        ->middleware('auth');
+
+    Route::post('/forgot-password', [ForgotPassword::class, 'store']);
+    Route::post('/forgot-password/{token}', [ForgotPassword::class, 'reset']);
 });
- 

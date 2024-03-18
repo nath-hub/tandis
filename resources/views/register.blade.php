@@ -13,7 +13,7 @@
             <div class="tj-sec-heading text-center">
 
                 <div class="d-md-none d-sm-block">
-                    <img src="assets/images/im2.jpg" height="250" />
+                    <img src="{{asset('assets/images/im2.jpg')}}" height="250" />
                 </div>
 
             </div>
@@ -30,7 +30,7 @@
         @endif
         <div class="row no-gutters shadow-lg pb-5">
             <div class="col-md-5 d-none d-md-block">
-                <img src="assets/images/blog/b2.jpeg" height="850" />
+                <img src="{{asset('assets/images/blog/b2.jpeg')}}" height="850" />
             </div>
             <div class="col-md-6 bg-white py-5 md-2">
                 <h3 class="pb-3 text-center">S'inscrire</h3>
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="form-check mb-3">
-                            <input type="checkbox" name="statut" class="form-check-input" id="show-fields">
+                            <input type="checkbox" name="type" class="form-check-input" id="show-fields">
                             <label class="form-check-label" for="show-fields">
                                 Je suis une entreprise
                             </label>
@@ -81,27 +81,16 @@
                             <div class="form-group pb-1 border mb-3" style="border-radius: 10px;">
                                 <input type="name" name="name_enterprise" placeholder="Nom de l'entreprise"
                                     class="form-control" aria-describedby="nameHelp">
-                            </div>
+                            </div> 
 
                             <div class="form-group pb-1 border mb-3" style="border-radius: 10px;">
-                                <input type="name" name="commercial_register"
-                                    placeholder="Register de commerce de l'entreprise" class="form-control"
-                                    aria-describedby="nameHelp">
-                            </div>
-
-                            <div class="form-group pb-1 border mb-3" style="border-radius: 10px;">
-                                <input type="name" name="adresse" placeholder="adresse de l'entreprise"
+                                <input type="name" name="address" placeholder="adresse de l'entreprise"
                                     class="form-control" aria-describedby="nameHelp">
                             </div>
 
                             <div class="form-group pb-1 border mb-3" style="border-radius: 10px;">
-                                <input type="number" name="objectif" placeholder="Objectif de l'entreprise"
-                                    class="form-control" aria-describedby="nameHelp">
-                            </div>
-
-                            <div class="form-group pb-1 border mb-3" style="border-radius: 10px;">
-                                <input type="web_site" name="web_site" placeholder="Site de l'entreprise"
-                                    class="form-control" id="exampleInputweb_site1" aria-describedby="web_siteHelp">
+                                <input type="web_site" name="web_site" placeholder="Site de l'entreprise *"
+                                    class="form-control" aria-describedby="web_siteHelp">
                             </div>
                         </div>
 
@@ -115,10 +104,10 @@
                         </div>
 
                         <div class="pb-4">
-                            <button type="submit" class="btn btn-success w-100 font-weight-bold mt-2">Submit</button>
+                            <button type="submit" class="btn btn-success w-100 font-weight-bold mt-2">S'inscrire</button>
                         </div>
                     </form>
-                    <div class="sideline pb-4">OR</div>
+                    <div class="sideline pb-4">OU</div>
                     <div class="pb-4">
                         <div class="row">
                             <div class="col-6">

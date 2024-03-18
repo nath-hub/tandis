@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
+use App\Models\Enterprise;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -22,15 +24,30 @@ class UserController extends Controller
     }
     public function store(UserStoreRequest $request)
     {
+        $estAdmin = $request->type;
+
+        if ($estAdmin === "on") {
+            $role = 'ENTERPRISE';
+        } else {
+            $role = 'INVEST';
+        }
 
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'password' => Hash::make($request->password),
+            "name" => $request->name,
+            "email" => $request->email,
+            "phone" => $request->phone,
+            "type" => $role,
+            "password" => Hash::make($request->password),
         ]);
 
-        Auth::login($user);
+        if ($role === "ENTERPRISE") {
+            Enterprise::create([
+                "user_id" => $user->id,
+                "web_site" => $request->web_site,
+                "name_enterprise" => $request->name_enterprise,
+                "address" => $request->address,
+            ]);
+        }
 
         return redirect('login')->with('success', 'User created successfully.');
 
@@ -49,11 +66,11 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required'
         ]);
-             
+
         User::where('email', $credentials);
-        
+
         if (Auth::attempt($credentials, $request->filled('remember'))) {
-            $request->session()->regenerate(); 
+            $request->session()->regenerate();
 
             return redirect('/');
         }
@@ -68,7 +85,7 @@ class UserController extends Controller
     {
         return view('users.show', [
             'user' => $user
-        ]); 
+        ]);
     }
     public function edit(user $user)
     {
@@ -86,5 +103,16 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect()->route('users.index')->with('success', 'user deleted successfully');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }

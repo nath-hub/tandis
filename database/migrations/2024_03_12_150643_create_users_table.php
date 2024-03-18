@@ -21,9 +21,10 @@ return new class extends Migration
             $table->string('town')->nullable();
             $table->date('birth_date')->nullable();
             $table->string('country')->nullable();
-            $table->enum('type', ['ADMIN', 'ENTERPRISE', 'INVEST'])->default('INVEST');
+            $table->enum('type', ['ENTERPRISE','ADMIN','INVEST'])->default('INVEST');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
             $table->rememberToken();
             $table->timestamps();
         });

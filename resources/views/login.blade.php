@@ -39,7 +39,7 @@
                                 @endif
                             </div>
                             <div class="d-flex align-items-center justify-content-between">
-                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember">
                                 <label class="form-check-label" for="invalidCheck">
                                     Se souvenir de moi!
                                 </label>
@@ -48,10 +48,10 @@
                             </div>
                             <div class="pb-4">
                                 <button type="submit"
-                                    class="btn btn-success w-100 font-weight-bold mt-2">Submit</button>
+                                    class="btn btn-success w-100 font-weight-bold mt-2">Se connecter</button>
                             </div>
                         </form>
-                        <div class="sideline pb-4">OR</div>
+                        <div class="sideline pb-4">OU</div>
                         <div class="pb-4">
                             <div class="row">
                                 <div class="col-6">
@@ -66,7 +66,7 @@
 
                         </div>
                         <div class="pb-4">
-                            Vous n'avez pas de compte ? <a style= 'color:green;' href="/tandis/public/users">S'inscrire'</a> <br />
+                            Vous n'avez pas de compte ? <a style= 'color:green;' href="/tandis/public/users">S'inscrire</a> <br />
                         </div>
                     
                         <a href="#section1" style= 'color:green;'>Mot de passe oublié</a>

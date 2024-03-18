@@ -29,7 +29,12 @@ class UserStoreRequest extends FormRequest
                 "name" => "required|string",
                 "email" => 'required|email',
                 "phone" => 'required|string',
-                "password" => "required"
+                "type" ,
+                "password" => "required",
+                "web_site",
+                "user_id",
+                "name_enterprise" => $this->est_admin ? "required": 'nullable',
+                "address" => $this->est_admin ? "required": 'nullable'
             ];
         }
         return [
