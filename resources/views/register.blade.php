@@ -62,6 +62,14 @@
                             @endif
                         </div>
 
+                        <div class="d-none" style="border-radius: 10px;">
+                            <input type="file" value="{{asset('assets/images/pp.jpg')}}" name="photo" placeholder="photo" class="form-control"
+                                value="{{ old('photo') }}" aria-describedby="photoHelp">
+                            @if ($errors->has('photo'))
+                                <span class="text-danger text-left">{{ $errors->first('photo') }}</span>
+                            @endif
+                        </div>
+
                         <div class="form-group  border mb-3" style="border-radius: 10px;">
                             <input type="password" name="password" value="{{ old('password') }}" placeholder="Password"
                                 class="form-control">

@@ -11,7 +11,7 @@ class EnterpriseUpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,21 @@ class EnterpriseUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'siren' => "sometimes|required|string",
+            'commercial_register' => "sometimes|required|string",
+            'name_enterprise' => "sometimes|required|string",
+            'address' => "sometimes|required|string",
+            'phase' => "sometimes|required|string",
+            'livres' => "sometimes|required|mimes:pdf,zip",
+            'politique' => "sometimes|required|mimes:pdf,zip",
+            'date_debut' => "sometimes|required|date",
+            'date_fin' => "sometimes|required|date",
+            'prix_phase' => "sometimes|required|integer",
+            'statut_phase' => "sometimes|required|string",
+            'objectif' => "sometimes|required|integer",
+            'montant_actuel' => "sometimes|required|integer",
+            'web_site' => "sometimes|required|string",
+            'description' => "sometimes|required|string",
         ];
     }
 }

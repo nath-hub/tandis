@@ -22,8 +22,11 @@
      <div class="canvas-content-area d-none d-lg-block">
          <div class="contact-info-list">
              <p class="des">
-                 We take a bottom-line approach to each project. Our clients consistently, enhanced brand loyalty
-                 and new leads thanks to our work.
+                TANDIS Invest est véhicule hybride de financement en capital destiné à promouvoir 
+                l’entrepreneuriat africain innovant et à fort impact environnemental et social via
+                 l’épargne des africaines .
+
+
              </p>
              <div class="canvas-title">
                  <h4 class="title">Contact info</h4>
@@ -164,14 +167,14 @@
                              <div class="tj-menu-area d-lg-block d-none">
                                  <nav>
                                      <ul>
-                                         <li class="has-dropdown current-menu-item"><a href="/">Home</a>
+                                         <li class="current-menu-item"><a href="/">Home</a>
                                          </li>
 
-                                         <li class="has-dropdown"><a href="services.html">Services</a></li>
+                                         <li><a href="services.html">Services</a></li>
 
-                                         <li class="has-dropdown"><a href="#">Projects</a> </li>
+                                         <li><a href="#">Nos Projets</a> </li>
 
-                                         <li> <a href="/about">About Us</a> </li>
+                                         <li> <a href="/about">A Propos</a> </li>
                                          @guest
                                              <li> <a href="login">Se Connecter</a></li>
                                          @endguest
@@ -180,7 +183,7 @@
                                              <li><a href="{{ route('users.show', auth()->user()->id) }}"
                                                      class="nav-link px-2 text-white">Mon Compte</a></li>
                                          @endauth
-                                         <li><a href="contact.html">Contact Us</a></li>
+                                         <li><a href="contact.html">Contact</a></li>
                                      </ul>
                                  </nav>
                              </div>
@@ -203,6 +206,7 @@
                                  <a class="tj-header-btn btn" href="contact.html">Investir <i
                                          class="flaticon-right-arrow"></i></a>
                              </div>
+                             
                          </div>
                      </div>
                  </div>
@@ -224,11 +228,11 @@
                              <div class="tj-menu-area d-lg-block d-none" id="main-menu">
                                  <nav id="mobile-menu">
                                      <ul>
-                                         <li class="has-dropdown current-menu-item">
+                                         <li class="current-menu-item">
                                              <a href="/">Home</a>
                                          </li>
-                                         <li><a href="/about">About Us</a></li>
-                                         <li class="has-dropdown"><a href="services.html">Services</a></li>
+                                         <li><a href="/about">A Propos</a></li>
+                                         <li><a href="services.html">Services</a></li>
                                          @guest
                                              <li> <a href="login">Se Connecter</a></li>
                                          @endguest
@@ -237,9 +241,9 @@
                                              <li><a href="{{ route('users.show', auth()->user()->id) }}"
                                                      class="nav-link px-2 text-white">Mon Compte</a></li>
                                          @endauth
-                                         <li class="has-dropdown"><a href="#">Projects</a></li>
+                                         <li><a href="#">Nos Projets</a></li>
 
-                                         <li><a href="contact.html">Contact Us</a></li>
+                                         <li><a href="contact.html">Contact</a></li>
                                      </ul>
                                  </nav>
                              </div>

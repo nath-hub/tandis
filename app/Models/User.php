@@ -41,6 +41,6 @@ class User extends Authenticatable
 
     public function enterprise()
     {
-        return $this->belongsTo(Enterprise::class, 'foreign_key');
+        return $this->belongsTo(Enterprise::class);
     }
 }

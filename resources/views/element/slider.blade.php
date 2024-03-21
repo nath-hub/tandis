@@ -20,10 +20,13 @@
                                         </p>
                                 </div>
                                 <div class="slider-button d-flex">
-                                    <a class="tj-transparent-btn btn" href="contact.html">
+                                    <a class="tj-transparent-btn btn" href="{{route('invest.index')}}">
                                         Investir <i class="flaticon-right-arrow"></i>
                                     </a>
+                                    <a class="tj-transparent-btn btn py-3" href="">Soumettre un projet <i
+                                        class="flaticon-right-arrow"></i></a>
                                 </div>
+                                 
                             </div>
                         </div>
                     </div>
@@ -44,7 +47,7 @@
                                     </p>
                                 </div>
                                 <div class="slider-button d-flex">
-                                    <a class="tj-transparent-btn btn" href="contact.html">
+                                    <a class="tj-transparent-btn btn" href="{{route('invest.index')}}">
                                         Investir <i class="flaticon-right-arrow"></i>
                                     </a>
                                 </div>
@@ -68,7 +71,7 @@
                                         fonds que vous nous confiez pour des tiers.</p>
                                 </div>
                                 <div class="slider-button d-flex">
-                                    <a class="tj-transparent-btn btn" href="contact.html">
+                                    <a class="tj-transparent-btn btn" href="{{route('invest.index')}}">
                                         Investir <i class="flaticon-right-arrow"></i>
                                     </a>
                                 </div>
@@ -92,7 +95,7 @@
                                     </p>
                                 </div>
                                 <div class="slider-button d-flex">
-                                    <a class="tj-transparent-btn btn" href="contact.html">
+                                    <a class="tj-transparent-btn btn" href="{{route('invest.index')}}">
                                         Investir <i class="flaticon-right-arrow"></i>
                                     </a>
                                 </div>

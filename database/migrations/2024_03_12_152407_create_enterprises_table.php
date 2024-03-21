@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('name_enterprise');
             $table->string('address')->nullable();
             $table->string('phase')->nullable();
+            $table->string('livres')->nullable();
+            $table->string('politique')->nullable();
             $table->date('date_debut')->nullable();
             $table->date('date_fin')->nullable();
             $table->integer('prix_phase')->nullable();

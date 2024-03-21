@@ -11,7 +11,7 @@ class UserUpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class UserUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "name" => "sometimes|required|string", 
+            "phone" => 'sometimes|required|string', 
+            "password" => "sometimes|required", 
+            "town" => "sometimes|required|string", 
+            "type" => "sometimes|required|string", 
+            "country" => 'sometimes|required|string', 
+            "birth_date" => "sometimes|required|date", 
+            'photo' => 'sometimes|required|image|mimes:jpeg,png,jpg,gif,svg|max:2048' 
         ];
     }
 }

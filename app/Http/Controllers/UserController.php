@@ -37,6 +37,7 @@ class UserController extends Controller
             "email" => $request->email,
             "phone" => $request->phone,
             "type" => $role,
+            "photo" => $request->photo,
             "password" => Hash::make($request->password),
         ]);
 
@@ -83,21 +84,48 @@ class UserController extends Controller
 
     public function show(User $user)
     {
+        $enterprise = Enterprise::where('user_id', $user->id)->first();
         return view('users.show', [
-            'user' => $user
+            'user' => $user,
+            'photo' => asset("$user->photo"),
+            'enterprise' => $enterprise
         ]);
     }
     public function edit(user $user)
     {
+        $enterprise = Enterprise::where('user_id', $user->id)->first();
+
         return view('users.edit', [
-            'user' => $user
+            'user' => $user,
+            'photo' => asset("$user->photo"),
+            'enterprise' => $enterprise
         ]);
     }
     public function update(UserUpdateRequest $request, User $user)
     {
-        $user->update($request->validated());
+        dd($request->all());
 
-        return redirect()->route('users.index')->with('success', 'user updated successfully');
+        if (empty ($request->file('photo'))) {
+            $avatarPath = $user->photo;
+        } else {
+            $avatarPath = $request->photo->store('users/tmp', 'public');
+        }
+
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->town = $request->town;
+        $user->country = $request->country;
+        $user->birth_date = $request->birth_date;
+        $user->type = $request->type;
+        $user->photo = $avatarPath;
+
+        $user->save();
+        $enterprise = Enterprise::where('user_id', $user->id)->first();
+        return view('users.show', [
+            'user' => $user,
+            'photo' => asset("$user->photo"),
+            'enterprise' => $enterprise
+        ]);
     }
     public function destroy(User $user)
     {

@@ -31,6 +31,7 @@ class UserStoreRequest extends FormRequest
                 "phone" => 'required|string',
                 "type" ,
                 "password" => "required",
+                "photo",
                 "web_site",
                 "user_id",
                 "name_enterprise" => $this->est_admin ? "required": 'nullable',

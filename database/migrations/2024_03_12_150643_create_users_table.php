@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('statut', ['ACTIF', 'INACTIF'])->default('ACTIF');
             $table->string('phone')->nullable()->unique();
             $table->string('town')->nullable();
+            $table->string('code')->nullable();
             $table->date('birth_date')->nullable();
             $table->string('country')->nullable();
             $table->enum('type', ['ENTERPRISE','ADMIN','INVEST'])->default('INVEST');
