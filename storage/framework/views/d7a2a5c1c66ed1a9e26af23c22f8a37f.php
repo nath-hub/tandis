@@ -28,7 +28,7 @@
     <div class="animation-preloader">
         <div class="spinner">
             <div class="loader-icon">
-                <img src="assets/images/im9.png" alt="Tandis Investement" />
+                <img src="<?php echo e(asset('assets/images/im9.png')); ?>" alt="Tandis Investement" />
             </div>
         </div>
         <div class="txt-loading">

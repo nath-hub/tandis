@@ -103,7 +103,7 @@ class UserController extends Controller
     }
     public function update(UserUpdateRequest $request, User $user)
     {
-        dd($request->all());
+        // dd($request->all());
 
         if (empty ($request->file('photo'))) {
             $avatarPath = $user->photo;
@@ -113,9 +113,9 @@ class UserController extends Controller
 
         $user->name = $request->name;
         $user->phone = $request->phone;
-        $user->town = $request->town;
-        $user->country = $request->country;
-        $user->birth_date = $request->birth_date;
+        $user->town = $request->towns;
+        $user->country = $request->countrys;
+        $user->birth_date = $request->birth_dates;
         $user->type = $request->type;
         $user->photo = $avatarPath;
 

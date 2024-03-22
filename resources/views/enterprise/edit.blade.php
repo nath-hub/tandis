@@ -43,12 +43,12 @@
                                                 <td>
                                                     <div class="col-12">
                                                         <div class="form-group border " style="border-radius: 10px;">
-                                                            <input type="siren" placeholder="siren"
+                                                            <input type="text" placeholder="siren"
                                                                 class="form-control" value="{{ $enterprise->siren }}"
-                                                                name="siren" aria-describedby="sirenHelp">
-                                                            @if ($errors->has('siren'))
+                                                                name="sirens" aria-describedby="sirensHelp">
+                                                            @if ($errors->has('sirens'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('siren') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('sirens') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -62,11 +62,10 @@
                                                             <input type="commercial_register"
                                                                 placeholder="commercial_register" class="form-control"
                                                                 value="{{ $enterprise->commercial_register }}"
-                                                                name="commercial_register"
-                                                                aria-describedby="commercial_registerHelp">
-                                                            @if ($errors->has('commercial_register'))
+                                                                name="commercial_registers" >
+                                                            @if ($errors->has('commercial_registers'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('commercial_register') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('commercial_registers') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -80,11 +79,11 @@
                                                             <input type="text" placeholder="name_enterprise"
                                                                 class="form-control"
                                                                 value="{{ $enterprise->name_enterprise }}"
-                                                                name="name_enterprise"
-                                                                aria-describedby="name_enterpriseHelp">
-                                                            @if ($errors->has('name_enterprise'))
+                                                                name="name_enterprises"
+                                                                aria-describedby="name_enterprisesHelp">
+                                                            @if ($errors->has('name_enterprises'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('name_enterprise') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('name_enterprises') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -97,10 +96,10 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
                                                             <input type="text" placeholder="address"
                                                                 class="form-control" value="{{ $enterprise->address }}"
-                                                                name="address" aria-describedby="addressHelp">
-                                                            @if ($errors->has('address'))
+                                                                name="addres" aria-describedby="addresHelp">
+                                                            @if ($errors->has('addres'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('address') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('addres') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -113,10 +112,10 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
                                                             <input type="text" placeholder="phase"
                                                                 class="form-control" value="{{ $enterprise->phase }}"
-                                                                name="phase" aria-describedby="phaseHelp">
-                                                            @if ($errors->has('phase'))
+                                                                name="phases" aria-describedby="phasesHelp">
+                                                            @if ($errors->has('phases'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('phase') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('phases') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -135,11 +134,11 @@
                                                             @endif
                                                             <input type="file" placeholder="livres"
                                                                 class="form-control" value="{{ $enterprise->livres }}"
-                                                                name="livres" accept=".pdf"
-                                                                aria-describedby="livresHelp">
-                                                            @if ($errors->has('livres'))
+                                                                name="livress" accept=".pdf"
+                                                                aria-describedby="livressHelp">
+                                                            @if ($errors->has('livress'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('livres') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('livress') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -158,11 +157,11 @@
 
                                                             <input type="file" placeholder="politique"
                                                                 class="form-control"
-                                                                value="{{ $enterprise->politique }}" name="politique"
-                                                                aria-describedby="politiqueHelp">
-                                                            @if ($errors->has('politique'))
+                                                                value="{{ $enterprise->politique }}" name="politiques"
+                                                                aria-describedby="politiquesHelp">
+                                                            @if ($errors->has('politiques'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('politique') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('politiques') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -176,10 +175,10 @@
                                                             <input type="date" placeholder="date de debut"
                                                                 class="form-control"
                                                                 value="{{ $enterprise->date_debut }}"
-                                                                name="date_debut" aria-describedby="date_debutHelp">
-                                                            @if ($errors->has('date_debut'))
+                                                                name="date_debuts" aria-describedby="date_debutsHelp">
+                                                            @if ($errors->has('date_debuts'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('date_debut') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('date_debuts') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -192,11 +191,11 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
                                                             <input type="date" placeholder="date_fin"
                                                                 class="form-control"
-                                                                value="{{ $enterprise->date_fin }}" name="date_fin"
-                                                                aria-describedby="date_finHelp">
-                                                            @if ($errors->has('date_fin'))
+                                                                value="{{ $enterprise->date_fin }}" name="date_fins"
+                                                                aria-describedby="date_finsHelp">
+                                                            @if ($errors->has('date_fins'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('date_fin') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('date_fins') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -210,10 +209,10 @@
                                                             <input type="number" placeholder="prix de la phase"
                                                                 class="form-control"
                                                                 value="{{ $enterprise->prix_phase }}"
-                                                                name="prix_phase" aria-describedby="prix_phaseHelp">
-                                                            @if ($errors->has('prix_phase'))
+                                                                name="prix_phases" aria-describedby="prix_phasesHelp">
+                                                            @if ($errors->has('prix_phases'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('prix_phase') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('prix_phases') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -226,7 +225,7 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
 
                                                             <input class="form-control" list="datalistOptions"
-                                                                id="exampleDataList" name="statut_phase"
+                                                                id="exampleDataList" name="statut_phases"
                                                                 value="{{ $enterprise->statut_phase }}"
                                                                 placeholder="Différents options...">
                                                             <datalist id="datalistOptions">
@@ -235,9 +234,9 @@
                                                                 <option value="Non débuté">
                                                             </datalist>
 
-                                                            @if ($errors->has('statut_phase'))
+                                                            @if ($errors->has('statut_phases'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('statut_phase') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('statut_phases') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -251,11 +250,11 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
                                                             <input type="number" placeholder="objectif"
                                                                 class="form-control"
-                                                                value="{{ $enterprise->objectif }}" name="objectif"
-                                                                aria-describedby="objectifHelp">
-                                                            @if ($errors->has('objectif'))
+                                                                value="{{ $enterprise->objectif }}" name="objectifs"
+                                                                aria-describedby="objectifsHelp">
+                                                            @if ($errors->has('objectifs'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('objectif') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('objectifs') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -270,11 +269,11 @@
                                                             <input type="number" placeholder="montant actuel"
                                                                 class="form-control"
                                                                 value="{{ $enterprise->montant_actuel }}"
-                                                                name="montant_actuel"
-                                                                aria-describedby="montant_actuelHelp">
-                                                            @if ($errors->has('montant_actuel'))
+                                                                name="montant_actuels"
+                                                                aria-describedby="montant_actuelsHelp">
+                                                            @if ($errors->has('montant_actuels'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('montant_actuel') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('montant_actuels') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -287,11 +286,11 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
                                                             <input type="text" placeholder="site web"
                                                                 class="form-control"
-                                                                value="{{ $enterprise->web_site }}" name="web_site"
-                                                                aria-describedby="web_siteHelp">
-                                                            @if ($errors->has('web_site'))
+                                                                value="{{ $enterprise->web_site }}" name="web_sites"
+                                                                aria-describedby="web_sitesHelp">
+                                                            @if ($errors->has('web_sites'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('web_site') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('web_sites') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -305,10 +304,10 @@
                                                             <input type="text" placeholder="description"
                                                                 class="form-control"
                                                                 value="{{ $enterprise->description }}"
-                                                                name="description" aria-describedby="descriptionHelp">
-                                                            @if ($errors->has('description'))
+                                                                name="descriptions" aria-describedby="descriptionsHelp">
+                                                            @if ($errors->has('descriptions'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('description') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('descriptions') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>

@@ -30,33 +30,33 @@ class EnterpriseController extends Controller
     {
         // dd($request->all());
 
-        if (empty ($request->file('livres'))) {
+        if (empty ($request->file('livress'))) {
             $livre = $enterprise->livres;
         } else {
-            $livre = $request->livres->store('fichiers/tmp', 'public');
+            $livre = $request->livress->store('fichiers/tmp', 'public');
         }
 
-        if (empty ($request->file('politique'))) {
+        if (empty ($request->file('politiques'))) {
             $politique = $enterprise->politique;
         } else {
-            $politique = $request->politique->store('fichiers/tmp', 'public');
+            $politique = $request->politiques->store('fichiers/tmp', 'public');
         }
 
-        $enterprise->siren =  $request->siren;
-        $enterprise->commercial_register =  $request->commercial_register; 
-        $enterprise->name_enterprise =  $request->name_enterprise; 
-        $enterprise->address =  $request->address;
-        $enterprise->phase =  $request->phase;
+        $enterprise->siren =  $request->siresn;
+        $enterprise->commercial_register =  $request->commercial_registers; 
+        $enterprise->name_enterprise =  $request->name_enterprises; 
+        $enterprise->address =  $request->addres;
+        $enterprise->phase =  $request->phases;
         $enterprise->livres =  $livre; 
         $enterprise->politique =  $politique;
-        $enterprise->date_debut =  $request->date_debut; 
-        $enterprise->date_fin =  $request->date_fin; 
-        $enterprise->prix_phase =  $request->prix_phase; 
-        $enterprise->statut_phase =  $request->statut_phase; 
-        $enterprise->objectif =  $request->objectif; 
-        $enterprise->montant_actuel =  $request->montant_actuel; 
-        $enterprise->web_site =  $request->web_site; 
-        $enterprise->description =  $request->description;
+        $enterprise->date_debut =  $request->date_debuts; 
+        $enterprise->date_fin =  $request->date_fins; 
+        $enterprise->prix_phase =  $request->prix_phases; 
+        $enterprise->statut_phase =  $request->statut_phases; 
+        $enterprise->objectif =  $request->objectifs; 
+        $enterprise->montant_actuel =  $request->montant_actuels; 
+        $enterprise->web_site =  $request->web_sites; 
+        $enterprise->description =  $request->descriptions;
 
         $enterprise->save();
 

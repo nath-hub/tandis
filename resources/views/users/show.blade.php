@@ -12,16 +12,23 @@
         <div class="container py-5 d-none d-md-block">
             <div class="row  shadow-lg rounded">
                 <div class="col-3 text-center">
-                    <img class="rounded" height="150px" width="200px" src="{{ asset("tandis/public/$user->photo") }}" alt="Image" />
-                    <div class="py-3">
+                    <img class="rounded" height="150px" width="200px" src="{{ asset('assets/images/pp.jpg' ?? $user->photo) }}" alt="Image" />
+                    <div class="py-1">
                         <a href="{{route ('invest.create')}}" class="btn btn-success">investir</a>
                     </div>
                     <a href="edit" class="btn btn-success">modifier mon compte</a>
-                    <div class="py-3">
+                    <div class="py-1">
                         <a class="btn btn-success" href="edit">
                             changer mon mot de passe
                         </a>
-                    </div>
+                    </div> 
+                    @if ($user->type === 'ENTERPRISE')
+                            <div class="py-3">
+                                <a class="btn btn-success" href="{{ route('enterprise.edit', $enterprise->id) }}">
+                                    changer les infos de l'entreprise
+                                </a>
+                            </div>
+                    @endif
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingTwo">
                             <button class="accordion-button " type="button" data-bs-toggle="collapse"
@@ -246,7 +253,7 @@
                 <div class="">
                     <div class="row">
                         <div class="col-4 py-4">
-                            <img src="{{ asset('assets/images/testimonial/te1.jpg') }}" alt="Image de profil"
+                            <img src="{{ asset('assets/images/pp.jpg' ?? $user->photo)  }}" alt="Image de profil"
                                 class="rounded-circle" width="150" height="140">
                         </div>
                         <div class="col-8">
@@ -257,6 +264,13 @@
                             <div class="py-3">
                                 <button class="btn btn-success"> changer mon mot de passe</button>
                             </div>
+                            @if ($user->type === 'ENTERPRISE')
+                            <div class="py-3">
+                                <a class="btn btn-success" href="{{ route('enterprise.edit', $enterprise->id) }}">
+                                    changer les infos de l'entreprise
+                                </a>
+                            </div>
+                    @endif
                         </div>
                     </div>
 

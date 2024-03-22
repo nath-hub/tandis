@@ -28,10 +28,7 @@ Route::get('/about', function () {
 Route::get('/login', function () {
     return view('login');
 });
-
-// Route::get('/register', function () {
-//     return view('register');
-// });
+ 
 
 Route::get('/log', [UserController::class, 'log'])->name('log')->middleware('auth');
 
