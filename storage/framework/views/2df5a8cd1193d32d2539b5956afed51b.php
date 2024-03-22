@@ -22,8 +22,8 @@
      <div class="canvas-content-area d-none d-lg-block">
          <div class="contact-info-list">
              <p class="des">
-                TANDIS Invest est véhicule hybride de financement en capital destiné à promouvoir 
-                l’entrepreneuriat africain innovant et à fort impact environnemental et social via
+                 TANDIS Invest est véhicule hybride de financement en capital destiné à promouvoir
+                 l’entrepreneuriat africain innovant et à fort impact environnemental et social via
                  l’épargne des africaines .
 
 
@@ -170,13 +170,22 @@
                                          <li class="current-menu-item"><a href="/">Home</a>
                                          </li>
 
+
                                          <li><a href="services.html">Services</a></li>
 
                                          <li><a href="#">Nos Projets</a> </li>
 
                                          <li> <a href="/about">A Propos</a> </li>
                                          <?php if(auth()->guard()->guest()): ?>
-                                             <li> <a href="login">Se Connecter</a></li>
+                                             <li class="has-dropdown current-menu-item">
+                                                 <a href="index.html">Connexion</a>
+                                                 <ul class="sub-menu">
+                                                     <li class="current-menu-item">
+                                                         <a href="login">Se Connecter</a>
+                                                     </li>
+                                                     <li> <a href="tandis/public/users">S'inscrire</a></li>
+                                                 </ul>
+                                             </li>
                                          <?php endif; ?>
 
                                          <?php if(auth()->guard()->check()): ?>
@@ -206,7 +215,7 @@
                                  <a class="tj-header-btn btn" href="contact.html">Investir <i
                                          class="flaticon-right-arrow"></i></a>
                              </div>
-                             
+
                          </div>
                      </div>
                  </div>

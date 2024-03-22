@@ -77,7 +77,7 @@ class UserController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'informations de connexion incorrect. verifier si vous avez un compte',
         ]);
     }
 
