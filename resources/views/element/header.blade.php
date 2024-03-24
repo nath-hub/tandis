@@ -171,14 +171,14 @@
                                          </li>
 
 
-                                         <li><a href="services.html">Services</a></li>
+                                         <li><a href="{{ route('home.service') }}">Services</a></li>
 
-                                         <li><a href="#">Nos Projets</a> </li>
+                                         <li><a href="{{ route('home.projet') }}">Nos Projets</a> </li>
 
-                                         <li> <a href="/about">A Propos</a> </li>
+                                         <li> <a href="{{ route('home.about') }}">A Propos</a> </li>
                                          @guest
                                              <li class="has-dropdown current-menu-item">
-                                                 <a href="index.html">Connexion</a>
+                                                 <a href="login">Connexion</a>
                                                  <ul class="sub-menu">
                                                      <li class="current-menu-item">
                                                          <a href="login">Se Connecter</a>
@@ -192,7 +192,7 @@
                                              <li><a href="{{ route('users.show', auth()->user()->id) }}"
                                                      class="nav-link px-2 text-white">Mon Compte</a></li>
                                          @endauth
-                                         <li><a href="contact.html">Contact</a></li>
+                                         <li><a href="{{ route('home.contact') }} ">Contact</a></li>
                                      </ul>
                                  </nav>
                              </div>

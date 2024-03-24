@@ -39,7 +39,8 @@
 
                                 <button type="button" class="btn btn-success" id="imageUploadButton">Choisir une
                                     image</button>
-                                <input type="file" class="d-none" id="imageUpload" name="photo" accept="image/*"  onchange="handleImageUpload(this)">
+                                <input type="file" class="d-none" id="imageUpload" name="photo" accept="image/*"
+                                    onchange="handleImageUpload(this)">
                                 @if ($errors->has('photo'))
                                     <span class="text-danger text-left">{{ $errors->first('photo') }}</span>
                                 @endif
@@ -73,13 +74,12 @@
                                                 <td>
                                                     <div class="col-5">
                                                         <div class="form-group border " style="border-radius: 10px;">
-                                                            <input type="name" placeholder="name"
-                                                                class="form-control"
-                                                                value="{{ $user->name     }}"
-                                                                name="names" aria-describedby="nameHelp">
-                                                            @if ($errors->has('names'))
+                                                            <input type="name" placeholder="Noms"
+                                                                class="form-control" value="{{ $user->name }}"
+                                                                name="name" aria-describedby="nameHelp">
+                                                            @if ($errors->has('name'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('names') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('name') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -106,12 +106,12 @@
                                                 <td>
                                                     <div class="col-5">
                                                         <div class="form-group border " style="border-radius: 10px;">
-                                                            <input type="text" placeholder="Ville" name="towns"
+                                                            <input type="text" placeholder="Ville" name="town"
                                                                 class="form-control" value="{{ $user->town }}"
                                                                 aria-describedby="townHelp">
-                                                            @if ($errors->has('towns'))
+                                                            @if ($errors->has('town'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('towns') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('town') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -124,10 +124,10 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
                                                             <input type="text" placeholder="Pays"
                                                                 class="form-control" value="{{ $user->country }}"
-                                                                name="countrys" aria-describedby="countryHelp">
-                                                            @if ($errors->has('countrys'))
+                                                                name="country" aria-describedby="countryHelp">
+                                                            @if ($errors->has('country'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('countrys') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('country') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -140,10 +140,10 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
                                                             <input type="date" placeholder="Date de naissance"
                                                                 class="form-control" value="{{ $user->birth_date }}"
-                                                                name="birth_dates" aria-describedby="birth_dateHelp">
-                                                            @if ($errors->has('birth_dates'))
+                                                                name="birth_date" aria-describedby="birth_dateHelp">
+                                                            @if ($errors->has('birth_date'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('birth_dates') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('birth_date') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -236,13 +236,12 @@
                                                 <td>
                                                     <div class="col-5">
                                                         <div class="form-group border " style="border-radius: 10px;">
-                                                            <input type="name" placeholder="name"
-                                                                class="form-control"
-                                                                value="{{ $user->name     }}"
-                                                                name="names" aria-describedby="nameHelp">
-                                                            @if ($errors->has('names'))
+                                                            <input type="name" placeholder="Noms"
+                                                                class="form-control" value="{{ $user->name }}"
+                                                                name="name" aria-describedby="nameHelp">
+                                                            @if ($errors->has('name'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('names') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('name') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -269,12 +268,12 @@
                                                 <td>
                                                     <div class="col-5">
                                                         <div class="form-group border " style="border-radius: 10px;">
-                                                            <input type="text" placeholder="Ville" name="towns"
+                                                            <input type="text" placeholder="Ville" name="town"
                                                                 class="form-control" value="{{ $user->town }}"
                                                                 aria-describedby="townHelp">
-                                                            @if ($errors->has('towns'))
+                                                            @if ($errors->has('town'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('towns') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('town') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -287,10 +286,10 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
                                                             <input type="text" placeholder="Pays"
                                                                 class="form-control" value="{{ $user->country }}"
-                                                                name="countrys" aria-describedby="countryHelp">
-                                                            @if ($errors->has('countrys'))
+                                                                name="country" aria-describedby="countryHelp">
+                                                            @if ($errors->has('country'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('countrys') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('country') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -303,10 +302,10 @@
                                                         <div class="form-group border " style="border-radius: 10px;">
                                                             <input type="date" placeholder="Date de naissance"
                                                                 class="form-control" value="{{ $user->birth_date }}"
-                                                                name="birth_dates" aria-describedby="birth_dateHelp">
-                                                            @if ($errors->has('birth_dates'))
+                                                                name="birth_date" aria-describedby="birth_dateHelp">
+                                                            @if ($errors->has('birth_date'))
                                                                 <span
-                                                                    class="text-danger text-left">{{ $errors->first('birth_dates') }}</span>
+                                                                    class="text-danger text-left">{{ $errors->first('birth_date') }}</span>
                                                             @endif
                                                         </div>
                                                     </div>

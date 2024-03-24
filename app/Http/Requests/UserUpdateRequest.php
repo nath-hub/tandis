@@ -22,13 +22,13 @@ class UserUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "names" => "sometimes|required|string", 
+            "name" => "sometimes|required|string", 
             "phone" => 'sometimes|required|string', 
             "password" => "sometimes|required", 
-            "towns" => "sometimes|required|string", 
+            "town" => "sometimes|required|string", 
             "type" => "sometimes|required|string", 
-            "countrys" => 'sometimes|required|string', 
-            "birth_dates" => "sometimes|required|date", 
+            "country" => 'sometimes|required|string', 
+            "birth_date" => "sometimes|required|date", 
             'photo'  
         ];
     }

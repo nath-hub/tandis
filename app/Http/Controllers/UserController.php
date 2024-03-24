@@ -95,7 +95,7 @@ class UserController extends Controller
     {
         $enterprise = Enterprise::where('user_id', $user->id)->first();
 
-        return view('users.edit', [
+        return redirect()->route('users.edit', [
             'user' => $user,
             'photo' => asset("$user->photo"),
             'enterprise' => $enterprise
@@ -106,26 +106,32 @@ class UserController extends Controller
         // dd($request->all());
 
         if (empty ($request->file('photo'))) {
-            $avatarPath = $user->photo;
+            if (empty ($user->photo)) {
+                $avatarPath = ('assets/images/pp.jpg');
+
+            } else {
+                $avatarPath = $user->photo;
+            }
+
         } else {
             $avatarPath = $request->photo->store('users/tmp', 'public');
         }
 
         $user->name = $request->name;
         $user->phone = $request->phone;
-        $user->town = $request->towns;
-        $user->country = $request->countrys;
-        $user->birth_date = $request->birth_dates;
+        $user->town = $request->town;
+        $user->country = $request->country;
+        $user->birth_date = $request->birth_date;
         $user->type = $request->type;
         $user->photo = $avatarPath;
 
         $user->save();
         $enterprise = Enterprise::where('user_id', $user->id)->first();
-        return view('users.show', [
+        return redirect()->route('users.show', [
             'user' => $user,
             'photo' => asset("$user->photo"),
             'enterprise' => $enterprise
-        ]);
+        ])->with('success', 'Utilisateur mis à jour avec succès !');
     }
     public function destroy(User $user)
     {

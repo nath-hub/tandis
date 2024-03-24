@@ -25,10 +25,12 @@ Route::get('/about', function () {
     return view('about');
 });
 
+
+
 Route::get('/login', function () {
     return view('login');
 });
- 
+
 
 Route::get('/log', [UserController::class, 'log'])->name('log')->middleware('auth');
 
@@ -49,7 +51,7 @@ Route::group(['prefix' => 'tandis/public/users'], function () {
     Route::post('/forgot-password', [ForgotPassword::class, 'store']);
     Route::post('/forgot-password/{token}', [ForgotPassword::class, 'reset']);
 
-    
+
 });
 
 Route::group(['prefix' => 'tandis/public'], function () {
@@ -60,4 +62,14 @@ Route::group(['prefix' => 'tandis/public'], function () {
     Route::post('/invest', [InvestController::class, 'create'])->name('invest.create')->middleware('auth');
 
 
+    Route::get('/service', [EnterpriseController::class, 'service'])->name('home.service');
+
+    Route::get('/contact', [EnterpriseController::class, 'contact'])->name('home.contact');
+
+    Route::get('/projet', [EnterpriseController::class, 'projet'])->name('home.projet');
+
+    Route::get('/about', [EnterpriseController::class, 'about'])->name('home.about');
+    // Route::get('/about', function () {
+    //     return view('about');
+    // });
 });

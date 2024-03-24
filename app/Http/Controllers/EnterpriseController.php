@@ -42,7 +42,7 @@ class EnterpriseController extends Controller
             $politique = $request->politiques->store('fichiers/tmp', 'public');
         }
 
-        $enterprise->siren =  $request->siresn;
+        $enterprise->siren =  $request->sirens;
         $enterprise->commercial_register =  $request->commercial_registers; 
         $enterprise->name_enterprise =  $request->name_enterprises; 
         $enterprise->address =  $request->addres;
@@ -62,9 +62,20 @@ class EnterpriseController extends Controller
 
         $user = $request->user();
 
-        return view('users.show', [
+        return redirect()->route('users.show', [
             'enterprise' => $enterprise,
             'user' => $user
         ]);
+    }
+
+    public function service(){
+        return view('service');
+    }
+    public function contact(){
+        return view('contact');
+    }
+
+    public function projet(){
+        return view('projet');
     }
 }

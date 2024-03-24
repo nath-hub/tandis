@@ -7,27 +7,32 @@
     <section class="breadcrumb-wrapper" data-bg-image="{{ asset('assets/images/im3.jpg') }}">
 
     </section>
-
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <main>
         <div class="container py-5 d-none d-md-block">
             <div class="row  shadow-lg rounded">
                 <div class="col-3 text-center">
-                    <img class="rounded" height="150px" width="200px" src="{{ asset('assets/images/pp.jpg' ?? $user->photo) }}" alt="Image" />
+                    <img class="rounded" height="150px" width="200px"
+                        src="{{ asset('assets/images/pp.jpg' ?? $user->photo) }}" alt="Image" />
                     <div class="py-1">
-                        <a href="{{route ('invest.create')}}" class="btn btn-success">investir</a>
+                        <a href="{{ route('invest.create') }}" class="btn btn-success">investir</a>
                     </div>
                     <a href="edit" class="btn btn-success">modifier mon compte</a>
                     <div class="py-1">
                         <a class="btn btn-success" href="edit">
                             changer mon mot de passe
                         </a>
-                    </div> 
+                    </div>
                     @if ($user->type === 'ENTERPRISE')
-                            <div class="py-3">
-                                <a class="btn btn-success" href="{{ route('enterprise.edit', $enterprise->id) }}">
-                                    changer les infos de l'entreprise
-                                </a>
-                            </div>
+                        <div class="py-3">
+                            <a class="btn btn-success" href="{{ route('enterprise.edit', $enterprise->id) }}">
+                                changer les infos de l'entreprise
+                            </a>
+                        </div>
                     @endif
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingTwo">
@@ -46,7 +51,7 @@
                             </button>
                         </h3>
                     </div>
-                    @if ($user->type === "ENTERPRISE")
+                    @if ($user->type === 'ENTERPRISE')
                         <div class="accordion-item">
                             <h3 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -138,7 +143,7 @@
                                         <td>15/02/2022</td>
                                         <td>Terminer</td>
                                         <td><a class="btn btn-outline-warning" href="{{ asset($user->type) }}">Lire le
-                                            PDF</a></td>
+                                                PDF</a></td>
                                     </tr>
                                     <tr class="table-active">
                                         <td>Tandis</td>
@@ -148,7 +153,7 @@
                                         <td>10/02/2022</td>
                                         <td>En-cours</td>
                                         <td><a class="btn btn-outline-warning" href="{{ asset($user->type) }}">Lire le
-                                            PDF</a></td>
+                                                PDF</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -184,15 +189,17 @@
                                             <td>{{ $enterprise->phase }} </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">livres: </th> 
-                                            <td><a class="btn btn-outline-warning" href="{{ asset($enterprise->livres) }}">Lire le
-                                                PDF</a></td>
+                                            <th scope="row">livres: </th>
+                                            <td><a class="btn btn-outline-warning"
+                                                    href="{{ asset($enterprise->livres) }}">Lire le
+                                                    PDF</a></td>
                                         </tr>
 
                                         <tr>
                                             <th scope="row">politique : </th>
-                                            <td> <a class="btn btn-outline-warning" href="{{ asset($enterprise->politique) }}">Lire le
-                                                PDF</a> </td>
+                                            <td> <a class="btn btn-outline-warning"
+                                                    href="{{ asset($enterprise->politique) }}">Lire le
+                                                    PDF</a> </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">date_debut: </th>
@@ -209,17 +216,19 @@
                                         <tr>
                                             <th scope="row">statut_phase: </th>
                                             <td>{{ $enterprise->statut_phase }} </td>
-                                        </tr><tr>
+                                        </tr>
+                                        <tr>
                                             <th scope="row">objectif: </th>
                                             <td>{{ $enterprise->objectif }} </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">montant_actuel: </th>
                                             <td>{{ $enterprise->montant_actuel }} </td>
-                                        </tr><tr>
-                                            <th scope="row">web_site: </th> 
-                                            <td> <a class="btn btn-link" href="{{ $enterprise->web_site  }}">
-                                                Visiter le site</a> </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">web_site: </th>
+                                            <td> <a class="btn btn-link" href="{{ $enterprise->web_site }}">
+                                                    Visiter le site</a> </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">description: </th>
@@ -253,24 +262,25 @@
                 <div class="">
                     <div class="row">
                         <div class="col-4 py-4">
-                            <img src="{{ asset('assets/images/pp.jpg' ?? $user->photo)  }}" alt="Image de profil"
+                            <img src="{{ asset('assets/images/pp.jpg' ?? $user->photo) }}" alt="Image de profil"
                                 class="rounded-circle" width="150" height="140">
                         </div>
                         <div class="col-8">
                             <div class="py-3">
-                                <a href="{{route ('invest.create')}}" class="btn btn-success">investir</a>
+                                <a href="{{ route('invest.create') }}" class="btn btn-success">investir</a>
                             </div>
                             <a href="edit" class="btn btn-success">modifier mon compte</a>
                             <div class="py-3">
                                 <button class="btn btn-success"> changer mon mot de passe</button>
                             </div>
                             @if ($user->type === 'ENTERPRISE')
-                            <div class="py-3">
-                                <a class="btn btn-success" href="{{ route('enterprise.edit', $enterprise->id) }}">
-                                    changer les infos de l'entreprise
-                                </a>
-                            </div>
-                    @endif
+                                <div class="py-3">
+                                    <a class="btn btn-success"
+                                        href="{{ route('enterprise.edit', $enterprise->id) }}">
+                                        changer les infos de l'entreprise
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     </div>
 
@@ -296,7 +306,7 @@
                                     <tbody>
                                         <tr>
                                             <th scope="row">Nom : </th>
-                                            <td>{{ $user->name }} </td>
+                                            <td>{{ $user->photo }} </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Email: </th>
