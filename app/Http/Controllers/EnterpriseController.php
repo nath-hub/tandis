@@ -9,6 +9,16 @@ use Illuminate\Http\Request;
 class EnterpriseController extends Controller
 {
 
+    public function index()
+    {
+        $enterprises = Enterprise::all(); // Fetch all articles
+        return view('welcome', compact('enterprises'));
+    }
+
+    public function show(Enterprise $enterprises) // Route binding for enterprises
+    {
+        return view('enterprises.show', compact('enterprises'));
+    }
     public function edit(Enterprise $enterprise)
     {
         // if (auth()->check()) {
@@ -22,11 +32,11 @@ class EnterpriseController extends Controller
         // }
 
         return view('enterprise.edit', [
-            'enterprise' => $enterprise, 
+            'enterprise' => $enterprise,
         ]);
     }
 
-    public function update(EnterpriseUpdateRequest $request, Enterprise $enterprise)
+    public function update( EnterpriseUpdateRequest $request, Enterprise $enterprise)
     {
         // dd($request->all());
 
@@ -42,40 +52,47 @@ class EnterpriseController extends Controller
             $politique = $request->politiques->store('fichiers/tmp', 'public');
         }
 
-        $enterprise->siren =  $request->sirens;
-        $enterprise->commercial_register =  $request->commercial_registers; 
-        $enterprise->name_enterprise =  $request->name_enterprises; 
-        $enterprise->address =  $request->addres;
-        $enterprise->phase =  $request->phases;
-        $enterprise->livres =  $livre; 
-        $enterprise->politique =  $politique;
-        $enterprise->date_debut =  $request->date_debuts; 
-        $enterprise->date_fin =  $request->date_fins; 
-        $enterprise->prix_phase =  $request->prix_phases; 
-        $enterprise->statut_phase =  $request->statut_phases; 
-        $enterprise->objectif =  $request->objectifs; 
-        $enterprise->montant_actuel =  $request->montant_actuels; 
-        $enterprise->web_site =  $request->web_sites; 
-        $enterprise->description =  $request->descriptions;
+        $enterprise->siren = $request->sirens;
+        $enterprise->commercial_register = $request->commercial_registers;
+        $enterprise->name_enterprise = $request->name_enterprises;
+        $enterprise->address = $request->addres;
+        $enterprise->livres = $livre;
+        $enterprise->politique = $politique;
+        $enterprise->objectif = $request->objectifs;
+        $enterprise->montant_actuel = $request->montant_actuels;
+        $enterprise->web_site = $request->web_sites;
+        $enterprise->description = $request->descriptions;
+        $enterprise->prix_action = $request->prix_actions;
+        $enterprise->nombre_action = $request->nombre_actions;
 
         $enterprise->save();
 
         $user = $request->user();
 
-        return redirect()->route('users.show', [
+        return redirect()->route('phases.create', [
             'enterprise' => $enterprise,
             'user' => $user
         ]);
     }
 
-    public function service(){
+    public function service()
+    {
         return view('service');
     }
-    public function contact(){
+    public function contact()
+    {
         return view('contact');
     }
 
-    public function projet(){
+    public function projet()
+    {
         return view('projet');
     }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+
 }

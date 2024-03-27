@@ -19,14 +19,11 @@ return new class extends Migration
             $table->string('siren')->nullable();
             $table->string('commercial_register')->nullable();
             $table->string('name_enterprise');
-            $table->string('address')->nullable();
-            $table->string('phase')->nullable();
+            $table->string('address')->nullable(); 
             $table->string('livres')->nullable();
-            $table->string('politique')->nullable();
-            $table->date('date_debut')->nullable();
-            $table->date('date_fin')->nullable();
-            $table->integer('prix_phase')->nullable();
-            $table->string('statut_phase')->nullable();
+            $table->string('politique')->nullable(); 
+            $table->integer('prix_action')->nullable();
+            $table->integer('nombre_action')->nullable(); 
             $table->string('objectif')->nullable();
             $table->integer('montant_actuel')->nullable();
             $table->string('web_site')->nullable();

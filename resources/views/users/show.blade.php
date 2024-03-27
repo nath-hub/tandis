@@ -19,9 +19,9 @@
                     <img class="rounded" height="150px" width="200px"
                         src="{{ asset('assets/images/pp.jpg' ?? $user->photo) }}" alt="Image" />
                     <div class="py-1">
-                        <a href="{{ route('invest.create') }}" class="btn btn-success">investir</a>
+                        <a href="{{ route('invest.create', $enterprise->id) }}" class="btn btn-success">investir</a>
                     </div>
-                    <a href="edit" class="btn btn-success">modifier mon compte</a>
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success">modifier mon compte</a>
                     <div class="py-1">
                         <a class="btn btn-success" href="edit">
                             changer mon mot de passe
@@ -76,6 +76,7 @@
                                         <tr>
                                             <th scope="row">Nom : </th>
                                             <td>{{ $user->name }} </td>
+
                                         </tr>
                                         <tr>
                                             <th scope="row">Email: </th>
@@ -128,34 +129,34 @@
                                         <th scope="col-3">Entreprise</th>
                                         <th scope="col-1">Phase</th>
                                         <th scope="col-2">Montant</th>
-                                        <th scope="col-1">Quantité</th>
+                                        <th scope="col-1">Qté</th>
                                         <th scope="col-2">Date</th>
                                         <th scope="col-2">Statut</th>
                                         <th scope="col-2">Recu</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr class="table-active">
-                                        <td>Tandis</td>
-                                        <th>Phase 1</th>
-                                        <td>15000</td>
-                                        <td>15</td>
-                                        <td>15/02/2022</td>
-                                        <td>Terminer</td>
-                                        <td><a class="btn btn-outline-warning" href="{{ asset($user->type) }}">Lire le
-                                                PDF</a></td>
-                                    </tr>
-                                    <tr class="table-active">
-                                        <td>Tandis</td>
-                                        <th>Phase 1</th>
-                                        <td>10000</td>
-                                        <td>10</td>
-                                        <td>10/02/2022</td>
-                                        <td>En-cours</td>
-                                        <td><a class="btn btn-outline-warning" href="{{ asset($user->type) }}">Lire le
-                                                PDF</a></td>
-                                    </tr>
-                                </tbody>
+                                @if (isset($invest))
+                                    @foreach ($invest as $item)
+                                        @foreach ($enterprises as $enter)
+                                            <tbody>
+                                                <tr class="table-active">
+                                                    <td>{{ $enter->name_enterprise }}</td>
+                                                    <th>{{ $item->nombre_action }}</th>
+                                                    <td>{{ $item->nombre_action }}</td>
+                                                    <td>{{ $item->nombre_action }}</td>
+                                                    <td>{{ $item->nombre_action }}</td>
+                                                    <td>{{ $item->nombre_action }}</td>
+                                                    <td><a class="btn btn-outline-warning"
+                                                            href="{{ asset($user->type) }}">Lire le
+                                                            PDF</a></td>
+                                                </tr>
+
+                                            </tbody>
+                                        @endforeach
+                                    @endforeach
+                                @else
+                                    <p>Aucune investissement n'existe!</p>
+                                @endif
                             </table>
                         </div>
                     </div>
@@ -183,11 +184,7 @@
                                         <tr>
                                             <th scope="row">address: </th>
                                             <td>{{ $enterprise->address }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">phase : </th>
-                                            <td>{{ $enterprise->phase }} </td>
-                                        </tr>
+                                        </tr> 
                                         <tr>
                                             <th scope="row">livres: </th>
                                             <td><a class="btn btn-outline-warning"
@@ -201,22 +198,7 @@
                                                     href="{{ asset($enterprise->politique) }}">Lire le
                                                     PDF</a> </td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">date_debut: </th>
-                                            <td>{{ $enterprise->date_debut }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">date_fin: </th>
-                                            <td>{{ $enterprise->date_fin }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">prix_phase: </th>
-                                            <td>{{ $enterprise->prix_phase }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">statut_phase: </th>
-                                            <td>{{ $enterprise->statut_phase }} </td>
-                                        </tr>
+                                        
                                         <tr>
                                             <th scope="row">objectif: </th>
                                             <td>{{ $enterprise->objectif }} </td>
@@ -249,9 +231,7 @@
                                 <button type="submit" class="btn btn-danger"> Se déconnecter</button>
                             </div>
                         </div>
-                    </form>
-
-
+                    </form> 
 
                 </div>
 
@@ -267,9 +247,11 @@
                         </div>
                         <div class="col-8">
                             <div class="py-3">
-                                <a href="{{ route('invest.create') }}" class="btn btn-success">investir</a>
+                                <a href="{{ route('invest.create', $enterprise->id) }}"
+                                    class="btn btn-success">investir</a>
                             </div>
-                            <a href="edit" class="btn btn-success">modifier mon compte</a>
+                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success">modifier mon
+                                compte</a>
                             <div class="py-3">
                                 <button class="btn btn-success"> changer mon mot de passe</button>
                             </div>
@@ -294,6 +276,12 @@
                         data-bs-target="#investi">
                         <h4>Mes Investissements +</h4>
                     </a>
+                    @if ($user->type === 'ENTERPRISE')
+                        <a class="accordion-button border bg-success collapsed p-3" data-bs-toggle="collapse"
+                            data-bs-target="#enterprise">
+                            <h4> Mon Entreprise +</h4>
+                        </a>
+                    @endif
 
                     <div id="profil" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
@@ -365,26 +353,93 @@
                                                 <th scope="col-2">Statut</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr class="table-active">
-                                                <td>Tandis</td>
-                                                <th>Phase 1</th>
-                                                <td>15000</td>
-                                                <td>15</td>
-                                                <td>15/02/2022</td>
-                                                <td>Terminer</td>
-                                            </tr>
-                                            <tr class="table-active">
-                                                <td>Tandis</td>
-                                                <th>Phase 1</th>
-                                                <td>10000</td>
-                                                <td>10</td>
-                                                <td>10/02/2022</td>
-                                                <td>En-cours</td>
-                                            </tr>
-                                        </tbody>
+                                        @if (isset($invest))
+                                            @foreach ($invest as $item)
+                                                @foreach ($enterprises as $enter)
+                                                    <tbody>
+                                                        <tr class="table-active">
+                                                            <td>{{ $enter->name_enterprise }}</td>
+                                                            <th>{{ $item->nombre_action }}</th>
+                                                            <td>{{ $item->nombre_action }}</td>
+                                                            <td>{{ $item->nombre_action }}</td>
+                                                            <td>{{ $item->nombre_action }}</td>
+                                                            <td>{{ $item->nombre_action }}</td>
+                                                            <td><a class="btn btn-outline-warning"
+                                                                    href="{{ asset($user->type) }}">Lire le
+                                                                    PDF</a></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                @endforeach
+                                            @endforeach
+                                        @else
+                                            <p>Aucune investissement n'existe!</p>
+                                        @endif
                                     </table>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="enterprise" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="gy-3">
+                                <table class="table caption-top">
+                                    <caption>Informations de l'entreprise</caption>
+
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Siren : </th>
+                                            <td>{{ $enterprise->siren }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Email: </th>
+                                            <td>{{ $enterprise->commercial_register }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">name_enterprise : </th>
+                                            <td>{{ $enterprise->name_enterprise }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">address: </th>
+                                            <td>{{ $enterprise->address }} </td>
+                                        </tr>
+                                       
+                                        <tr>
+                                            <th scope="row">livres: </th>
+                                            <td><a class="btn btn-outline-warning"
+                                                    href="{{ asset($enterprise->livres) }}">Lire le
+                                                    PDF</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">politique : </th>
+                                            <td> <a class="btn btn-outline-warning"
+                                                    href="{{ asset($enterprise->politique) }}">Lire le
+                                                    PDF</a> </td>
+                                        </tr> 
+                                        <tr>
+                                            <th scope="row">objectif: </th>
+                                            <td>{{ $enterprise->objectif }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">montant_actuel: </th>
+                                            <td>{{ $enterprise->montant_actuel }} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">web_site: </th>
+                                            <td> <a class="btn btn-link" href="{{ $enterprise->web_site }}">
+                                                    Visiter le site</a> </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">description: </th>
+                                            <td>{{ $enterprise->description }} </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ class UpdatePhaseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class UpdatePhaseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'phase' => "sometimes|required|string",
+            'date_debut' => "sometimes|required|date",
+            'date_fin' => "sometimes|required|date",
+            'prix_phase' => "sometimes|required|integer",
+            'statut_phase' => "sometimes|required|string",
         ];
     }
 }

@@ -11,7 +11,7 @@ class InvestStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class InvestStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            // "name" => "string",
+            // "email" => "string|email",
+            // "phone" => "integer",
+            "prix_action" => "required|integer",
+            "nombre_action" => "required|integer",
+            "total_payer" => "required|integer", 
         ];
     }
 }

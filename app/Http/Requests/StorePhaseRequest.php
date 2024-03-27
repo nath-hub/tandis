@@ -11,7 +11,7 @@ class StorePhaseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,6 +27,7 @@ class StorePhaseRequest extends FormRequest
             'date_fin' => "required|date",
             'prix_phase' => "required|integer",
             'statut_phase' => "required|string",
+            
         ];
     }
 }

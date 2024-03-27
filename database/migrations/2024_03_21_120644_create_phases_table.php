@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('date_fin')->nullable();
             $table->integer('prix_phase')->nullable();
             $table->string('statut_phase')->nullable();  
+            $table->integer('prix_action')->nullable();
+            $table->integer('nombre_action')->nullable(); 
 
             $table->index(["enterprise_id"], "fk_enterprise_user");
             $table->foreign('enterprise_id')->references('id')->on('enterprises');

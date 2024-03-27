@@ -16,4 +16,14 @@ class Invest extends Model
      * @var array
      */
     protected $guarded = ['id'];
+
+    public function utilisateur()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function entreprise()
+    {
+        return $this->belongsTo(Enterprise::class);
+    }
 }

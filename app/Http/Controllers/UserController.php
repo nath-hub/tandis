@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Models\Enterprise;
+use App\Models\Invest;
+use App\Models\Phase;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -84,11 +86,27 @@ class UserController extends Controller
 
     public function show(User $user)
     {
+        $entreprises = $user->invests;
+        
+        if (count($entreprises) > 0) {
+            foreach ($entreprises as $item) {
+                $invest = Invest::with('entreprise')->where('user_id', $user->id)->where('enterprise_id', $item->id)->get();
+                dd($item);
+                $items[] = $item;
+            }
+            
+            $invests = $invest;
+        }else{
+            $invests = null;
+            $items = null; 
+        };
         $enterprise = Enterprise::where('user_id', $user->id)->first();
         return view('users.show', [
             'user' => $user,
             'photo' => asset("$user->photo"),
-            'enterprise' => $enterprise
+            'enterprise' => $enterprise,
+            'invest' => $invests,
+            'enterprises' => $items
         ]);
     }
     public function edit(user $user)
@@ -97,7 +115,6 @@ class UserController extends Controller
 
         return redirect()->route('users.edit', [
             'user' => $user,
-            'photo' => asset("$user->photo"),
             'enterprise' => $enterprise
         ]);
     }
@@ -105,8 +122,8 @@ class UserController extends Controller
     {
         // dd($request->all());
 
-        if (empty ($request->file('photo'))) {
-            if (empty ($user->photo)) {
+        if (empty($request->file('photo'))) {
+            if (empty($user->photo)) {
                 $avatarPath = ('assets/images/pp.jpg');
 
             } else {

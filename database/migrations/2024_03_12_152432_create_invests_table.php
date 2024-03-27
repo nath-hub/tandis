@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('enterprise_id');
-
-            $table->integer("price");
+ 
+            $table->integer('prix_action')->nullable();
+            $table->integer('nombre_action')->nullable(); 
             $table->string('feedback')->nullable();
-            $table->integer("etoile")->nullable();
+            $table->integer("etoile")->nullable(); 
+            $table->integer("total_payer")->nullable();
 
             $table->index(["enterprise_id"], "fk_enterprise_user");
             $table->index(["user_id"], "fk_user_enterprise");

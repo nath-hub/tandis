@@ -32,7 +32,7 @@
                     <div class="col-3 text-center">
                         <div class="user-image-container">
                             <img id="imagePreview" class="rounded-circle" height="200px" width="200px"
-                                src="{{ asset('assets/images/pp.jpg' ?? $user->photo) }}" /><br />
+                                src="{{ asset($user->photo) }}" /><br />
 
 
                             <div class="custom-file-upload py-3">

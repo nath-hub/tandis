@@ -43,4 +43,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Enterprise::class);
     }
+
+    public function entreprise()
+    {
+        return $this->belongsTo(Enterprise::class);
+    }
+
+    public function invests()
+    {
+        return $this->belongsToMany(Enterprise::class, 'invests');
+    }
 }

@@ -23,4 +23,14 @@ class Enterprise extends Model
     {
         return $this->hasOne(User::class);
     }
+
+    public function phases()
+    {
+        return $this->hasMany(Phase::class);
+    }
+
+    public function investisseurs()
+    {
+        return $this->belongsToMany(User::class, 'invests');
+    }
 }

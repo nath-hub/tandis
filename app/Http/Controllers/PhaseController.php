@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePhaseRequest;
 use App\Http\Requests\UpdatePhaseRequest;
 use App\Models\Phase;
+use App\Models\Enterprise;
+use Illuminate\Http\Request;
+
 
 class PhaseController extends Controller
 {
@@ -19,9 +22,11 @@ class PhaseController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
+    public function create(Request $request)
+    { 
+        $enterprise = Enterprise::where('user_id', auth()->user()->id)->firstOrFail();
+        $phases = Phase::where('enterprise_id', $enterprise->id)->get();
+        return view('phase.create', compact('phases'));
     }
 
     /**
@@ -29,7 +34,22 @@ class PhaseController extends Controller
      */
     public function store(StorePhaseRequest $request)
     {
-        //
+        $request->validated();
+
+        $enterprise = Enterprise::where('user_id', auth()->user()->id)->firstOrFail();
+
+        Phase::create([
+            "phase" => $request->phase,
+            "date_debut" => $request->date_debut,
+            "date_fin" => $request->date_fin, 
+            "prix_phase" => $request->prix_phase,
+            "statut_phase" => $request->statut_phase,
+            "enterprise_id" => $enterprise->id
+        ]); 
+
+        $phases = Phase::where('enterprise_id', $enterprise->id)->get();
+
+        return redirect()->route('phases.create', compact('phases'));
     }
 
     /**
@@ -37,7 +57,8 @@ class PhaseController extends Controller
      */
     public function show(Phase $phase)
     {
-        //
+        // $phases = Phase::where('enterprise_id', $enterprise)->get();
+        return  view('phase.create', compact('phases'));
     }
 
     /**

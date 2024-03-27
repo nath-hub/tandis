@@ -26,17 +26,14 @@ class EnterpriseUpdateRequest extends FormRequest
             'commercial_registers' => "sometimes|required|string",
             'name_enterprises' => "sometimes|required|string",
             'addres' => "sometimes|required|string",
-            'phases' => "sometimes|required|string",
             'livress' => "sometimes|required|mimes:pdf,zip",
             'politiques' => "sometimes|required|mimes:pdf,zip",
-            'date_debuts' => "sometimes|required|date",
-            'date_fins' => "sometimes|required|date",
-            'prix_phases' => "sometimes|required|integer",
-            'statut_phases' => "sometimes|required|string",
             'objectifs' => "sometimes|required|integer",
             'montant_actuels' => "sometimes|required|integer",
             'web_sites' => "sometimes|required|string",
             'descriptions' => "sometimes|required|string",
+            "prix_actions " => "required|integer",
+            "nombre_actions " => "required|integer",
         ];
     }
 }
