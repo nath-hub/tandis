@@ -5,7 +5,7 @@ use App\Http\Controllers\ForgotPassword;
 use App\Http\Controllers\InvestController;
 use App\Http\Controllers\PhaseController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController; 
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +36,7 @@ Route::get('/log', [UserController::class, 'log'])->name('log')->middleware('aut
 Route::post('/login', [UserController::class, 'login'])->name('login');
 
 
-Route::group(['prefix' => 'tandis/public/users'], function () {
+Route::group(['prefix' => 'users'], function () {
     Route::get('/', [UserController::class, 'index'])->name('users.index');
     Route::get('/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/create', [UserController::class, 'store'])->name('users.store');
@@ -69,11 +69,10 @@ Route::group(['prefix' => 'tandis/public'], function () {
     Route::get('/contact', [EnterpriseController::class, 'contact'])->name('home.contact');
     Route::get('/projet', [EnterpriseController::class, 'projet'])->name('home.projet');
     Route::get('/about', [EnterpriseController::class, 'about'])->name('home.about');
+ 
+});
 
-    // Route::post('/store', function (InvestStoreRequest $request) {
-    //     dd($request->all());
-    // })->name('invest.store'); 
-
+Route::group(['prefix' => 'invest/'], function () {
     Route::get('/', [InvestController::class, 'index'])->name('invest.index');
     Route::get('/create/{enterprise}', [InvestController::class, 'create'])->name('invest.create');
     Route::post('/store/{enterprise}', [InvestController::class, 'store'])->name('invest.store')->middleware('auth');
@@ -81,8 +80,4 @@ Route::group(['prefix' => 'tandis/public'], function () {
     Route::get('/{invest}/edit', [InvestController::class, 'edit'])->name('invest.edit');
     Route::put('/{invest}/update', [InvestController::class, 'update'])->name('invest.update');
     Route::delete('/{invest}/delete', [InvestController::class, 'destroy'])->name('invest.destroy');
-});
-
-Route::group(['prefix' => 'tandis/public/invest/'], function () {
-   
 });

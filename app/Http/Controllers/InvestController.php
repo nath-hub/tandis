@@ -13,13 +13,13 @@ class InvestController extends Controller
 {
     public function index()
     {
-        $id = auth()->user()->id;
-        $user = User::find($id);
+        // $id = auth()->user()->id;
+        // $user = User::find($id);
 
-        $entreprises = $user->investissements;
-
-        $invest = Invest::all();
-        return view('invest.index', compact('invest'));
+        // $entreprises = $user->investissements;
+        $enterprises = Enterprise::all();
+        // $invest = Invest::all();
+        return view('welcome', compact('enterprises'));
     }
 
     public function create(Enterprise $enterprise)

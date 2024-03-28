@@ -141,7 +141,7 @@
                 </div>
             </div>
         </div>
-        {{-- <div class=" d-block d-sm-none">
+        <div class=" d-block d-sm-none">
             <div class="shadow-lg rounded">
                 <div class="gy-3">
                     <table class="table caption-top">
@@ -274,7 +274,7 @@
                 </div>
             </div>
            
-        </div> --}}
+        </div>
         
     </form>
     @include('element.footer')

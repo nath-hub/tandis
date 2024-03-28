@@ -183,7 +183,7 @@
                                                      <li class="current-menu-item">
                                                          <a href="login">Se Connecter</a>
                                                      </li>
-                                                     <li> <a href="tandis/public/users">S'inscrire</a></li>
+                                                     <li> <a href="<?php echo e(route('users.create')); ?>">S'inscrire</a></li>
                                                  </ul>
                                              </li>
                                          <?php endif; ?>
@@ -243,9 +243,16 @@
                                          <li><a href="/about">A Propos</a></li>
                                          <li><a href="services.html">Services</a></li>
                                          <?php if(auth()->guard()->guest()): ?>
-                                             <li> <a href="login">Se Connecter</a></li>
+                                             <li class="has-dropdown current-menu-item">
+                                                 <a href="login">Connexion</a>
+                                                 <ul class="sub-menu">
+                                                     <li class="current-menu-item">
+                                                         <a href="login">Se Connecter</a>
+                                                     </li>
+                                                     <li> <a href="<?php echo e(route('users.create')); ?>">S'inscrire</a></li>
+                                                 </ul>
+                                             </li>
                                          <?php endif; ?>
-
                                          <?php if(auth()->guard()->check()): ?>
                                              <li><a href="<?php echo e(route('users.show', auth()->user()->id)); ?>"
                                                      class="nav-link px-2 text-white">Mon Compte</a></li>

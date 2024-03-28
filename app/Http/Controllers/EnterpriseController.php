@@ -11,7 +11,7 @@ class EnterpriseController extends Controller
 
     public function index()
     {
-        $enterprises = Enterprise::all(); // Fetch all articles
+        $enterprises = Enterprise::all();  
         return view('welcome', compact('enterprises'));
     }
 
@@ -36,7 +36,7 @@ class EnterpriseController extends Controller
         ]);
     }
 
-    public function update( EnterpriseUpdateRequest $request, Enterprise $enterprise)
+    public function update(  Request $request, Enterprise $enterprise)
     {
         // dd($request->all());
 

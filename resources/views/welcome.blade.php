@@ -169,8 +169,9 @@
 
 
 
-            @foreach ($enterprises as $enterprise)
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach ($enterprises as $enterprise)
                     <div class="col">
 
                         <div class="card h-100 text-center">
@@ -187,8 +188,7 @@
                                     <a href="{{ route('invest.create', ['enterprise' => $enterprise->id]) }}"
                                         class="btn btn-success btn-lg btn-block">
                                         Investir </a>
-                                    {{-- <a href="{{route('enterprise.show',$enterprise->id)}}"
-                                        class="btn btn-warning btn-lg btn-block">Details</a> --}}
+                                    <a href="#" class="btn btn-warning btn-lg btn-block">Details</a>
 
                                 </div>
                             </div>
@@ -198,9 +198,9 @@
                         </div>
 
                     </div>
+                @endforeach
+            </div>
 
-                </div>
-            @endforeach
         </div>
     </section>
     <!--=========== Project Section End =========-->

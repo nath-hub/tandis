@@ -169,8 +169,9 @@
 
 
 
-            <?php $__currentLoopData = $enterprises; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $enterprise): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <?php $__currentLoopData = $enterprises; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $enterprise): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col">
 
                         <div class="card h-100 text-center">
@@ -187,7 +188,7 @@
                                     <a href="<?php echo e(route('invest.create', ['enterprise' => $enterprise->id])); ?>"
                                         class="btn btn-success btn-lg btn-block">
                                         Investir </a>
-                                    
+                                    <a href="#" class="btn btn-warning btn-lg btn-block">Details</a>
 
                                 </div>
                             </div>
@@ -197,9 +198,9 @@
                         </div>
 
                     </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
 
-                </div>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </section>
     <!--=========== Project Section End =========-->
