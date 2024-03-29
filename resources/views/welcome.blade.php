@@ -188,7 +188,7 @@
                                     <a href="{{ route('invest.create', ['enterprise' => $enterprise->id]) }}"
                                         class="btn btn-success btn-lg btn-block">
                                         Investir </a>
-                                    <a href="#" class="btn btn-warning btn-lg btn-block">Details</a>
+                                    <a href="{{route('enterprise.show', ['enterprise' => $enterprise->id])}}" class="btn btn-warning btn-lg btn-block">Details</a>
 
                                 </div>
                             </div>

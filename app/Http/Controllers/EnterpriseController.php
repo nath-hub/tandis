@@ -15,9 +15,13 @@ class EnterpriseController extends Controller
         return view('welcome', compact('enterprises'));
     }
 
-    public function show(Enterprise $enterprises) // Route binding for enterprises
+    public function show($enterprises) // Route binding for enterprises
     {
-        return view('enterprises.show', compact('enterprises'));
+        $enterprise = Enterprise::where('id', $enterprises)->first();
+       
+        return view('enterprise.show', [
+            'enterprises' => $enterprise,
+        ]); 
     }
     public function edit(Enterprise $enterprise)
     {
@@ -86,7 +90,8 @@ class EnterpriseController extends Controller
 
     public function projet()
     {
-        return view('projet');
+        $enterprises = Enterprise::all();
+        return view('projet', compact('enterprises'));
     }
 
     public function about()

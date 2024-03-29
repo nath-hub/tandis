@@ -4,9 +4,7 @@
 <body>
     @include('element.head')
     @include('element.header')
-
-    <section class="breadcrumb-wrapper" data-bg-image="{{ asset('assets/images/im3.jpg') }}">
-    </section>
+    @include('element.headsection')
 
     @if (session('success'))
         <div class="alert alert-success">

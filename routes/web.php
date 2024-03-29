@@ -23,18 +23,14 @@ Route::get('/', [EnterpriseController::class, 'index'])->name('enterprise.index'
 
 Route::get('/about', function () {
     return view('about');
-});
-
-
+}); 
 
 Route::get('/login', function () {
     return view('login');
 });
 
-
 Route::get('/log', [UserController::class, 'log'])->name('log')->middleware('auth');
 Route::post('/login', [UserController::class, 'login'])->name('login');
-
 
 Route::group(['prefix' => 'users'], function () {
     Route::get('/', [UserController::class, 'index'])->name('users.index');
@@ -51,12 +47,11 @@ Route::group(['prefix' => 'users'], function () {
     Route::post('/forgot-password/{token}', [ForgotPassword::class, 'reset']);
 });
 
-Route::group(['prefix' => 'tandis/public'], function () {
+Route::group(['prefix' => 'enterprise'], function () {
+    Route::get('{enterprise}/show', [EnterpriseController::class, 'show'])->name('enterprise.show');
     Route::get('/{enterprise}/edit', [EnterpriseController::class, 'edit'])->name('enterprise.edit')->middleware('auth');
     Route::put('/{enterprise}/update', [EnterpriseController::class, 'update'])->name('enterprise.update');
-
-    // Route::resource('/phases', PhaseController);
-
+ 
     Route::get('/', [PhaseController::class, 'index'])->name('phases.index');
     Route::get('/create', [PhaseController::class, 'create'])->name('phases.create');
     Route::post('store/', [PhaseController::class, 'store'])->name('phases.store');

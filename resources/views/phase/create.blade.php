@@ -5,11 +5,9 @@
 
     @include('element.head')
     @include('element.header')
+    @include('element.headsection')
 
-
-    <section class="breadcrumb-wrapper" data-bg-image="{{ asset('assets/images/im3.jpg') }}">
-
-    </section>
+    
     <form method="POST" action="{{"store/"}}">
         @csrf
 

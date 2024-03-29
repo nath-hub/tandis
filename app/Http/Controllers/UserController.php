@@ -91,22 +91,25 @@ class UserController extends Controller
         if (count($entreprises) > 0) {
             foreach ($entreprises as $item) {
                 $invest = Invest::with('entreprise')->where('user_id', $user->id)->where('enterprise_id', $item->id)->get();
-                dd($item);
+                
                 $items[] = $item;
-            }
-            
+            } 
             $invests = $invest;
         }else{
             $invests = null;
             $items = null; 
-        };
+        }; 
         $enterprise = Enterprise::where('user_id', $user->id)->first();
+
+        $phase = Phase::where('enterprise_id', $enterprise->id)->where('statut_phase', "En-cour")->get();
+  
         return view('users.show', [
             'user' => $user,
             'photo' => asset("$user->photo"),
             'enterprise' => $enterprise,
             'invest' => $invests,
-            'enterprises' => $items
+            'enterprises' => $items,
+            "phase"=> $phase
         ]);
     }
     public function edit(user $user)

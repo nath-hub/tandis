@@ -240,8 +240,11 @@
                                          <li class="current-menu-item">
                                              <a href="/">Home</a>
                                          </li>
-                                         <li><a href="/about">A Propos</a></li>
-                                         <li><a href="services.html">Services</a></li>
+                                         <li><a href="<?php echo e(route('home.service')); ?>">Services</a></li>
+
+                                         <li><a href="<?php echo e(route('home.projet')); ?>">Nos Projets</a> </li>
+
+                                         <li> <a href="<?php echo e(route('home.about')); ?>">A Propos</a> </li>
                                          <?php if(auth()->guard()->guest()): ?>
                                              <li class="has-dropdown current-menu-item">
                                                  <a href="login">Connexion</a>
@@ -256,8 +259,7 @@
                                          <?php if(auth()->guard()->check()): ?>
                                              <li><a href="<?php echo e(route('users.show', auth()->user()->id)); ?>"
                                                      class="nav-link px-2 text-white">Mon Compte</a></li>
-                                         <?php endif; ?>
-                                         <li><a href="#">Nos Projets</a></li>
+                                         <?php endif; ?> 
 
                                          <li><a href="contact.html">Contact</a></li>
                                      </ul>
@@ -289,5 +291,4 @@
          </div>
      </div>
  </header>
- <!-- end: Header Area -->
-<?php /**PATH /home/ubix-group/sites/TandisApp/resources/views/element/header.blade.php ENDPATH**/ ?>
+ <!-- end: Header Area --><?php /**PATH /home/ubix-group/sites/TandisApp/resources/views/element/header.blade.php ENDPATH**/ ?>

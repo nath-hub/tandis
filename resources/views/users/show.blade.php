@@ -3,10 +3,8 @@
     @include('element.head')
     @include('element.header')
 
+    @include('element.headsection')
 
-    <section class="breadcrumb-wrapper" data-bg-image="{{ asset('assets/images/im3.jpg') }}">
-
-    </section>
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -19,7 +17,7 @@
                     <img class="rounded" height="150px" width="200px"
                         src="{{ asset('assets/images/pp.jpg' ?? $user->photo) }}" alt="Image" />
                     <div class="py-1">
-                        <a href="{{ route('invest.create', $enterprise->id) }}" class="btn btn-success">investir</a>
+                        <a href="{{ route('home.projet') }}" class="btn btn-success">investir</a>
                     </div>
                     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success">modifier mon compte</a>
                     <div class="py-1">
@@ -138,91 +136,94 @@
                                 @if (isset($invest))
                                     @foreach ($invest as $item)
                                         @foreach ($enterprises as $enter)
-                                            <tbody>
-                                                <tr class="table-active">
-                                                    <td>{{ $enter->name_enterprise }}</td>
-                                                    <th>{{ $item->nombre_action }}</th>
-                                                    <td>{{ $item->nombre_action }}</td>
-                                                    <td>{{ $item->nombre_action }}</td>
-                                                    <td>{{ $item->nombre_action }}</td>
-                                                    <td>{{ $item->nombre_action }}</td>
-                                                    <td><a class="btn btn-outline-warning"
-                                                            href="{{ asset($user->type) }}">Lire le
-                                                            PDF</a></td>
-                                                </tr>
+                                            @foreach ($phase as $phases)
+                                                <tbody>
+                                                    <tr class="table-active">
+                                                        <td>{{ $enter->name_enterprise }}</td>
+                                                        <th>{{ $phases->phase }}</th>
+                                                        <td>{{ $item->total_payer }}</td>
+                                                        <td>{{ $item->nombre_action }}</td>
+                                                        <td>{{ $item->created_at }}</td>
+                                                        <td>{{ $phases->statut_phase }}</td>
+                                                        <td><a class="btn btn-outline-warning"
+                                                                href="{{ asset($user->type) }}">Lire le
+                                                                PDF</a></td>
+                                                    </tr>
 
-                                            </tbody>
+                                                </tbody>
+                                            @endforeach
                                         @endforeach
                                     @endforeach
                                 @else
-                                    <p>Aucune investissement n'existe!</p>
+                                    <p>Vous n'avez pas encore investis !!!</p>
                                 @endif
                             </table>
                         </div>
                     </div>
 
-                    <div id="enterprise" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="gy-3">
-                                <table class="table caption-top">
-                                    <caption>Informations de l'entreprise</caption>
+                    @if ($user->type === 'ENTERPRISE')
+                        <div id="enterprise" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="gy-3">
+                                    <table class="table caption-top">
+                                        <caption>Informations de l'entreprise</caption>
 
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Siren : </th>
-                                            <td>{{ $enterprise->siren }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Email: </th>
-                                            <td>{{ $enterprise->commercial_register }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">name_enterprise : </th>
-                                            <td>{{ $enterprise->name_enterprise }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">address: </th>
-                                            <td>{{ $enterprise->address }} </td>
-                                        </tr> 
-                                        <tr>
-                                            <th scope="row">livres: </th>
-                                            <td><a class="btn btn-outline-warning"
-                                                    href="{{ asset($enterprise->livres) }}">Lire le
-                                                    PDF</a></td>
-                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Siren : </th>
+                                                <td>{{ $enterprise->siren }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Email: </th>
+                                                <td>{{ $enterprise->commercial_register }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">name_enterprise : </th>
+                                                <td>{{ $enterprise->name_enterprise }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">address: </th>
+                                                <td>{{ $enterprise->address }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">livres: </th>
+                                                <td><a class="btn btn-outline-warning"
+                                                        href="{{ asset($enterprise->livres) }}">Lire le
+                                                        PDF</a></td>
+                                            </tr>
 
-                                        <tr>
-                                            <th scope="row">politique : </th>
-                                            <td> <a class="btn btn-outline-warning"
-                                                    href="{{ asset($enterprise->politique) }}">Lire le
-                                                    PDF</a> </td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <th scope="row">objectif: </th>
-                                            <td>{{ $enterprise->objectif }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">montant_actuel: </th>
-                                            <td>{{ $enterprise->montant_actuel }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">web_site: </th>
-                                            <td> <a class="btn btn-link" href="{{ $enterprise->web_site }}">
-                                                    Visiter le site</a> </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">description: </th>
-                                            <td>{{ $enterprise->description }} </td>
-                                        </tr>
+                                            <tr>
+                                                <th scope="row">politique : </th>
+                                                <td> <a class="btn btn-outline-warning"
+                                                        href="{{ asset($enterprise->politique) }}">Lire le
+                                                        PDF</a> </td>
+                                            </tr>
 
-                                    </tbody>
-                                </table>
+                                            <tr>
+                                                <th scope="row">objectif: </th>
+                                                <td>{{ $enterprise->objectif }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">montant_actuel: </th>
+                                                <td>{{ $enterprise->montant_actuel }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">web_site: </th>
+                                                <td> <a class="btn btn-link" href="{{ $enterprise->web_site }}">
+                                                        Visiter le site</a> </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">description: </th>
+                                                <td>{{ $enterprise->description }} </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    @endif
                     <form action="{{ route('users.logout') }}" method="GET">
                         @csrf
                         <div class="row">
@@ -231,7 +232,7 @@
                                 <button type="submit" class="btn btn-danger"> Se déconnecter</button>
                             </div>
                         </div>
-                    </form> 
+                    </form>
 
                 </div>
 
@@ -247,8 +248,7 @@
                         </div>
                         <div class="col-8">
                             <div class="py-3">
-                                <a href="{{ route('invest.create', $enterprise->id) }}"
-                                    class="btn btn-success">investir</a>
+                                <a href="{{ route('home.projet') }}" class="btn btn-success">investir</a>
                             </div>
                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success">modifier mon
                                 compte</a>
@@ -270,16 +270,16 @@
 
                     <a class="accordion-button border bg-success collapsed p-3" data-bs-toggle="collapse"
                         data-bs-target="#profil">
-                        <h4>Informations Personnelles +</h4>
+                        <h5>Informations Personnelles +</h5>
                     </a>
                     <a class="accordion-button border bg-success collapsed p-3" data-bs-toggle="collapse"
                         data-bs-target="#investi">
-                        <h4>Mes Investissements +</h4>
+                        <h5>Mes Investissements +</h5>
                     </a>
                     @if ($user->type === 'ENTERPRISE')
                         <a class="accordion-button border bg-success collapsed p-3" data-bs-toggle="collapse"
                             data-bs-target="#enterprise">
-                            <h4> Mon Entreprise +</h4>
+                            <h5> Mon Entreprise +</h5>
                         </a>
                     @endif
 
@@ -356,24 +356,26 @@
                                         @if (isset($invest))
                                             @foreach ($invest as $item)
                                                 @foreach ($enterprises as $enter)
-                                                    <tbody>
-                                                        <tr class="table-active">
-                                                            <td>{{ $enter->name_enterprise }}</td>
-                                                            <th>{{ $item->nombre_action }}</th>
-                                                            <td>{{ $item->nombre_action }}</td>
-                                                            <td>{{ $item->nombre_action }}</td>
-                                                            <td>{{ $item->nombre_action }}</td>
-                                                            <td>{{ $item->nombre_action }}</td>
-                                                            <td><a class="btn btn-outline-warning"
-                                                                    href="{{ asset($user->type) }}">Lire le
-                                                                    PDF</a></td>
-                                                        </tr>
+                                                    @foreach ($phase as $phases)
+                                                        <tbody>
+                                                            <tr class="table-active">
+                                                                <td>{{ $enter->name_enterprise }}</td>
+                                                                <th>{{ $phases->phase }}</th>
+                                                                <td>{{ $item->total_payer }}</td>
+                                                                <td>{{ $item->nombre_action }}</td>
+                                                                <td>{{ $item->created_at }}</td>
+                                                                <td>{{ $phases->statut_phase }}</td>
+                                                                <td><a class="btn btn-outline-warning"
+                                                                        href="{{ asset($user->type) }}">Lire le
+                                                                        PDF</a></td>
+                                                            </tr>
 
-                                                    </tbody>
+                                                        </tbody>
+                                                    @endforeach
                                                 @endforeach
                                             @endforeach
                                         @else
-                                            <p>Aucune investissement n'existe!</p>
+                                            <p>Vous n'avez pas encore investis !!!</p>
                                         @endif
                                     </table>
                                 </div>
@@ -381,69 +383,69 @@
                         </div>
                     </div>
 
+                    @if ($user->type === 'ENTERPRISE')
+                        <div id="enterprise" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="gy-3">
+                                    <table class="table caption-top">
+                                        <caption>Informations de l'entreprise</caption>
 
-                    <div id="enterprise" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="gy-3">
-                                <table class="table caption-top">
-                                    <caption>Informations de l'entreprise</caption>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Siren : </th>
+                                                <td>{{ $enterprise->siren }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Email: </th>
+                                                <td>{{ $enterprise->commercial_register }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">name_enterprise : </th>
+                                                <td>{{ $enterprise->name_enterprise }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">address: </th>
+                                                <td>{{ $enterprise->address }} </td>
+                                            </tr>
 
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Siren : </th>
-                                            <td>{{ $enterprise->siren }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Email: </th>
-                                            <td>{{ $enterprise->commercial_register }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">name_enterprise : </th>
-                                            <td>{{ $enterprise->name_enterprise }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">address: </th>
-                                            <td>{{ $enterprise->address }} </td>
-                                        </tr>
-                                       
-                                        <tr>
-                                            <th scope="row">livres: </th>
-                                            <td><a class="btn btn-outline-warning"
-                                                    href="{{ asset($enterprise->livres) }}">Lire le
-                                                    PDF</a></td>
-                                        </tr>
+                                            <tr>
+                                                <th scope="row">livres: </th>
+                                                <td><a class="btn btn-outline-warning"
+                                                        href="{{ asset($enterprise->livres) }}">Lire le
+                                                        PDF</a></td>
+                                            </tr>
 
-                                        <tr>
-                                            <th scope="row">politique : </th>
-                                            <td> <a class="btn btn-outline-warning"
-                                                    href="{{ asset($enterprise->politique) }}">Lire le
-                                                    PDF</a> </td>
-                                        </tr> 
-                                        <tr>
-                                            <th scope="row">objectif: </th>
-                                            <td>{{ $enterprise->objectif }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">montant_actuel: </th>
-                                            <td>{{ $enterprise->montant_actuel }} </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">web_site: </th>
-                                            <td> <a class="btn btn-link" href="{{ $enterprise->web_site }}">
-                                                    Visiter le site</a> </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">description: </th>
-                                            <td>{{ $enterprise->description }} </td>
-                                        </tr>
+                                            <tr>
+                                                <th scope="row">politique : </th>
+                                                <td> <a class="btn btn-outline-warning"
+                                                        href="{{ asset($enterprise->politique) }}">Lire le
+                                                        PDF</a> </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">objectif: </th>
+                                                <td>{{ $enterprise->objectif }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">montant_actuel: </th>
+                                                <td>{{ $enterprise->montant_actuel }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">web_site: </th>
+                                                <td> <a class="btn btn-link" href="{{ $enterprise->web_site }}">
+                                                        Visiter le site</a> </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">description: </th>
+                                                <td>{{ $enterprise->description }} </td>
+                                            </tr>
 
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    @endif
                     <form action="{{ route('users.logout') }}" method="GET">
                         @csrf
                         <div class="row">

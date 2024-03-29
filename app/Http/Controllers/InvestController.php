@@ -8,6 +8,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Enterprise;
+use App\Models\Phase;
 
 class InvestController extends Controller
 {
@@ -22,35 +23,34 @@ class InvestController extends Controller
         return view('welcome', compact('enterprises'));
     }
 
-    public function create(Enterprise $enterprise)
+    public function create($enterprise)
     {
 
-        // $this->authorize('create', $enterprise);
+        // $this->authorize('create', $enterprise); 
 
-        $entrepriseId = request()->get('enterprise');
-
-        $enterprise = Enterprise::findOrFail($entrepriseId);
+        $enterprise = Enterprise::where('id', $enterprise)->first();
 
         $user = auth()->user();
 
         return view('invest.create', compact('user', 'enterprise'));
     }
 
-    public function store(InvestStoreRequest $request, Enterprise $enterprise)
+    public function store( Request $request, $enterprise)
     {
 
-        $entrepriseId = request()->get('enterprise');
+        $enterprise = Enterprise::where('id', $enterprise)->first();
 
-        $enterprise = Enterprise::findOrFail($entrepriseId);
+        // $request->validated();
 
-        $request->validated();
-
+        $phase = Phase::where('enterprise_id', $enterprise->id)->where('statut_phase', "En-cour")->first();
+         
         $user = auth()->user();
 
         $enterprise->investisseurs()->attach($user, [
             'prix_action' => $request->prix_action,
             'nombre_action' => $request->nombre_action,
             "total_payer" => $request->total_payer,
+            "phase_id" => $phase->id,
             'created_at' => Carbon::now(),
         ]);
 

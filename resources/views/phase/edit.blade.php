@@ -5,11 +5,7 @@
 
   @include('element.head')
   @include('element.header')
-
-
-  <section class="breadcrumb-wrapper" data-bg-image="{{ asset('assets/images/im3.jpg') }}">
-
-  </section>
+  @include('element.headsection')
 
 <table class="table caption-top">
     <caption>Modifier les informations de l'entreprise</caption>

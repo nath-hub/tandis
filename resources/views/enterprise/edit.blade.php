@@ -2,11 +2,7 @@
 
     @include('element.head')
     @include('element.header')
-
-
-    <section class="breadcrumb-wrapper" data-bg-image="{{ asset('assets/images/im3.jpg') }}">
-
-    </section>
+    @include('element.headsection')
 
 
     <div class="container mt-2">
