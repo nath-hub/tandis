@@ -9,7 +9,7 @@
 
     <?php echo $__env->make('element.slider', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <!--=========== About Section Start =========-->
+     <!--=========== About Section Start =========-->
     <section class="tj-about-section">
         <div class="container">
             <div class="row align-items-center">

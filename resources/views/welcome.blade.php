@@ -9,7 +9,7 @@
 
     @include('element.slider')
 
-    <!--=========== About Section Start =========-->
+     <!--=========== About Section Start =========-->
     <section class="tj-about-section">
         <div class="container">
             <div class="row align-items-center">

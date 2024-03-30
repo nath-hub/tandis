@@ -7,6 +7,11 @@
     @include('element.header')
     @include('element.headsection')
 
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     
     <div class="container py-5 d-md-block">
         <div class="text-center shadow-lg rounded py-4">

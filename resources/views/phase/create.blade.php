@@ -7,8 +7,13 @@
     @include('element.header')
     @include('element.headsection')
 
-    
-    <form method="POST" action="{{"store/"}}">
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    <form method="POST" action="{{ route('phases.store') }}">
         @csrf
 
         <div class="container py-5 ">
@@ -19,7 +24,9 @@
                         <div class="accordion-body">
                             <div class="gy-3">
                                 <table class="table caption-top">
-                                    <caption> <h3> Ajouter les phases d'investissement de votre projets </h3></caption>
+                                    <caption>
+                                        <h3> Ajouter les phases d'investissement de votre projets </h3>
+                                    </caption>
 
                                     <tbody>
                                         <tr>
@@ -123,16 +130,16 @@
                 </div>
             </div>
         </div>
-        
+
     </form>
- 
-    @if (isset($phases)) 
+
+    @if (isset($phases))
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="tj-sec-heading text-center"> 
+                    <div class="tj-sec-heading text-center">
                         <h2 class="sec-title">
-                        Les phases existantes <br />
+                            Les phases existantes <br />
                         </h2>
                     </div>
                 </div>
@@ -140,41 +147,40 @@
             <div class="card table-responsive">
                 <table class="table table-striped table-hover">
                     <thead class="table-primary">
-                      <tr>
-                        <th scope="col-2">Phases</th>
-                        <th scope="col-2">Début</th>
-                        <th scope="col-2">Fin</th>
-                        <th scope="col-2">Montant</th>
-                        <th scope="col-2 tj-color-theme-primary">Statut</th>
-                        <th scope="col-2">date de creation</th>
-                      </tr>
+                        <tr>
+                            <th scope="col-2">Phases</th>
+                            <th scope="col-2">Début</th>
+                            <th scope="col-2">Fin</th>
+                            <th scope="col-2">Montant</th>
+                            <th scope="col-2 tj-color-theme-primary">Statut</th>
+                            <th scope="col-2">date de creation</th>
+                        </tr>
                     </thead>
                     <tbody>
                         @foreach ($phases as $phase)
-                   
-                      <tr class="table-active">
-                        <th scope="row">{{ $phase->phase }}</th>
-                        <td>{{ $phase->date_debut }}</td>
-                        <td>{{ $phase->date_fin }}</td>
-                        <td>{{ $phase->prix_phase }}</td>
-                        <td>{{ $phase->statut_phase }}</td>
-                        <td>{{ $phase->created_at }}</td>
-                      </tr>  
-                      @endforeach
+                            <tr class="table-active">
+                                <th scope="row">{{ $phase->phase }}</th>
+                                <td>{{ $phase->date_debut }}</td>
+                                <td>{{ $phase->date_fin }}</td>
+                                <td>{{ $phase->prix_phase }}</td>
+                                <td>{{ $phase->statut_phase }}</td>
+                                <td>{{ $phase->created_at }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
-        @else
-            <p>Aucune phase n'existe!</p>
-        @endif
+    @else
+        <p>Aucune phase n'existe!</p>
+    @endif
 
-        <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-6 p-3 float-right"> 
-                <a class="btn btn-success" href="/"> retour  </a>
-            </div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6 p-3 float-right">
+            <a class="btn btn-success" href="/"> retour </a>
         </div>
+    </div>
     @include('element.footer')
 
 </html>

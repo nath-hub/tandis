@@ -44,13 +44,20 @@ class InvestController extends Controller
 
         $phase = Phase::where('enterprise_id', $enterprise->id)->where('statut_phase', "En-cour")->first();
          
+        if (empty($phase)){
+            return redirect()->route('enterprise.index', compact('phase'))
+            ->with('error', "vous ne pouvez pas investir car aucune phase avec le statut en cour n'a été créé !!!");
+        }else{
+            $phases = $phase->id;
+        }
+
         $user = auth()->user();
 
         $enterprise->investisseurs()->attach($user, [
             'prix_action' => $request->prix_action,
             'nombre_action' => $request->nombre_action,
             "total_payer" => $request->total_payer,
-            "phase_id" => $phase->id,
+            "phase_id" => $phases,
             'created_at' => Carbon::now(),
         ]);
 

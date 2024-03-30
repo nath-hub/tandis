@@ -36,7 +36,7 @@ class PhaseController extends Controller
     {
         $request->validated();
 
-        $enterprise = Enterprise::where('user_id', auth()->user()->id)->firstOrFail();
+        $enterprise = Enterprise::where('user_id', auth()->user()->id)->first();
 
         Phase::create([
             "phase" => $request->phase,
