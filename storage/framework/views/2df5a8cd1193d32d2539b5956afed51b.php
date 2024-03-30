@@ -167,7 +167,7 @@
                              <div class="tj-menu-area d-lg-block d-none">
                                  <nav>
                                      <ul>
-                                         <li class="current-menu-item"><a href="/">Home</a>
+                                         <li class="current-menu-item"><a href="<?php echo e(route('enterprise.index')); ?>">Home</a>
                                          </li>
 
 
@@ -212,7 +212,7 @@
                                  </ul>
                              </div>
                              <div class="info-item d-none d-md-block">
-                                 <a class="tj-header-btn btn" href="contact.html">Investir <i
+                                 <a class="tj-header-btn btn" href="<?php echo e(route('home.projet')); ?>">Investir <i
                                          class="flaticon-right-arrow"></i></a>
                              </div>
 
@@ -238,7 +238,7 @@
                                  <nav id="mobile-menu">
                                      <ul>
                                          <li class="current-menu-item">
-                                             <a href="/">Home</a>
+                                             <a href="<?php echo e(route('enterprise.index')); ?>">Home</a>
                                          </li>
                                          <li><a href="<?php echo e(route('home.service')); ?>">Services</a></li>
 
@@ -261,7 +261,7 @@
                                                      class="nav-link px-2 text-white">Mon Compte</a></li>
                                          <?php endif; ?> 
 
-                                         <li><a href="contact.html">Contact</a></li>
+                                         <li><a href="<?php echo e(route('home.contact')); ?>">Contact</a></li>
                                      </ul>
                                  </nav>
                              </div>
@@ -281,7 +281,7 @@
                                  </ul>
                              </div>
                              <div class="info-item d-none d-md-block">
-                                 <a class="tj-header-btn btn" href="contact.html">Investir <i
+                                 <a class="tj-header-btn btn" href="<?php echo e(route('home.projet')); ?>">Investir <i
                                          class="flaticon-right-arrow"></i></a>
                              </div>
                          </div>

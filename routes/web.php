@@ -69,7 +69,7 @@ Route::group(['prefix' => 'enterprise'], function () {
 
 Route::group(['prefix' => 'invest/'], function () {
     Route::get('/', [InvestController::class, 'index'])->name('invest.index');
-    Route::get('/create/{enterprise}', [InvestController::class, 'create'])->name('invest.create');
+    Route::get('/create/{enterprise}', [InvestController::class, 'create'])->name('invest.create')->middleware('auth');
     Route::post('/store/{enterprise}', [InvestController::class, 'store'])->name('invest.store')->middleware('auth');
     Route::get('/{invest}/show', [InvestController::class, 'show'])->name('invest.show');
     Route::get('/{invest}/edit', [InvestController::class, 'edit'])->name('invest.edit');

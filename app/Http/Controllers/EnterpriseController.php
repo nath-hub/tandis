@@ -11,7 +11,8 @@ class EnterpriseController extends Controller
 
     public function index()
     {
-        $enterprises = Enterprise::all();  
+        $enterprises = Enterprise::paginate(3);
+        // dd($enterprises);
         return view('welcome', compact('enterprises'));
     }
 
