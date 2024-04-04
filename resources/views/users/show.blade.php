@@ -226,9 +226,10 @@
                     @endif
                     <form action="{{ route('users.logout') }}" method="GET">
                         @csrf
-                        <div class="row">
-                            <div class="col-md-6"></div>
+                        <div class="row"> 
                             <div class="col-md-6 p-3 float-right">
+                                <a class="btn btn-warning" href="{{ URL::previous() }}">
+                                    <i class="fas fa-arrow-left"></i> Retour</a>
                                 <button type="submit" class="btn btn-danger"> Se déconnecter</button>
                             </div>
                         </div>
@@ -449,8 +450,10 @@
                     <form action="{{ route('users.logout') }}" method="GET">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6"></div>
+                            
                             <div class="col-md-6 p-3 float-right">
+                                <a class="btn btn-warning" href="{{ URL::previous() }}">
+                                    <i class="fas fa-arrow-left"></i> Retour</a>
                                 <button type="submit" class="btn btn-danger"> Se déconnecter</button>
                             </div>
                         </div>

@@ -130,7 +130,7 @@
 
                     </div>
                     <div class="pb-4">
-                        Vous n'avez pas de compte ? <a style= 'color:green;' href="/login">Se Connecter</a> <br />
+                        Vous n'avez pas de compte ? <a style= 'color:green;' href="/auth/login">Se Connecter</a> <br />
                     </div>
 
 

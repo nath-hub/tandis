@@ -9,7 +9,7 @@
 
     <div class="container py-5 d-md-block">
         <div class="row  shadow-lg rounded">
-
+             
             <div class="col-12">
                 <div class="gy-5">
                     <table class="table caption-top">
@@ -65,6 +65,11 @@
 
                         </tbody>
                     </table>
+                    <div>
+                        <a class="tj-primary-btn btn" href="{{ URL::previous() }}">
+                            <i class="fas fa-arrow-left"></i> Retour</a>
+                    </div>
+                   
                 </div>
             </div>
         </div>

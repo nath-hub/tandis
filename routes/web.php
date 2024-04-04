@@ -25,12 +25,8 @@ Route::get('/about', function () {
     return view('about');
 }); 
 
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/log', [UserController::class, 'log'])->name('log')->middleware('auth');
-Route::post('/login', [UserController::class, 'login'])->name('login');
+Route::get('auth/login', [UserController::class, 'log'])->name('login');
+Route::post('/login', [UserController::class, 'login'])->name('users.login');
 
 Route::group(['prefix' => 'users'], function () {
     Route::get('/', [UserController::class, 'index'])->name('users.index');

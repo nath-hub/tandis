@@ -65,51 +65,64 @@ class UserController extends Controller
     public function login(UserStoreRequest $request)
     {
 
-        $credentials = $request->validate([
+        $user = $request->validate([
             'email' => 'required',
             'password' => 'required'
         ]);
 
-        User::where('email', $credentials);
 
-        if (Auth::attempt($credentials, $request->filled('remember'))) {
+        $validate = User::where('email', $user['email'])->first();
+
+        // if (!empty($validate) && $validate->email_verified_at != null) {
+        // if (Auth::attempt(['email' => $user['email'], 'password' => $user['password']])) {
+
+        if (Auth::loginUsingId($validate->id)) {
             $request->session()->regenerate();
 
             return redirect('/');
+
+
         }
 
-        return back()->withErrors([
-            'email' => 'informations de connexion incorrect. verifier si vous avez un compte',
-        ]);
+        // }else{
+        //     return back()->withErrors([
+        //         'email' => 'Veuillez verifier votre compte en validant votre adresse mail',
+        //     ]);
+        // }
+
+
+
+
     }
 
 
     public function show(User $user)
     {
         $entreprises = $user->invests;
-        
+
         if (count($entreprises) > 0) {
             foreach ($entreprises as $item) {
                 $invest = Invest::with('entreprise')->where('user_id', $user->id)->where('enterprise_id', $item->id)->get();
-                
+
                 $items[] = $item;
-            } 
+            }
             $invests = $invest;
-        }else{
+        } else {
             $invests = null;
-            $items = null; 
-        }; 
+            $items = null;
+        }
+        ;
         $enterprise = Enterprise::where('user_id', $user->id)->first();
 
         $phase = Phase::where('enterprise_id', $enterprise->id)->where('statut_phase', "En-cour")->get();
-  
+
         return view('users.show', [
             'user' => $user,
             'photo' => asset("$user->photo"),
             'enterprise' => $enterprise,
             'invest' => $invests,
             'enterprises' => $items,
-            "phase"=> $phase
+            "phase" => $phase
         ]);
     }
     public function edit(user $user)

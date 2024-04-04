@@ -121,9 +121,7 @@
 
  <!-- start: Header Area -->
  <header class="tj-header-area header-absolute header-1">
-
-
-     <div class="tj-header-topbar-area">
+     <div class="tj-header-topbar-area d-lg-block d-none">
          <div class="container">
              <div class="row">
                  <div class="col-lg-12">
@@ -152,8 +150,6 @@
              </div>
          </div>
      </div>
-
-
      <div class="tj-bottom-content-area">
          <div class="container">
              <div class="row">
@@ -167,7 +163,8 @@
                              <div class="tj-menu-area d-lg-block d-none">
                                  <nav>
                                      <ul>
-                                         <li class="current-menu-item"><a href="<?php echo e(route('enterprise.index')); ?>">Home</a>
+                                         <li class="current-menu-item"><a
+                                                 href="<?php echo e(route('enterprise.index')); ?>">Home</a>
                                          </li>
 
 
@@ -178,10 +175,10 @@
                                          <li> <a href="<?php echo e(route('home.about')); ?>">A Propos</a> </li>
                                          <?php if(auth()->guard()->guest()): ?>
                                              <li class="has-dropdown current-menu-item">
-                                                 <a href="login">Connexion</a>
+                                                 <a href="<?php echo e(route('login')); ?>">Connexion</a>
                                                  <ul class="sub-menu">
                                                      <li class="current-menu-item">
-                                                         <a href="login">Se Connecter</a>
+                                                         <a href="<?php echo e(route('login')); ?>">Se Connecter</a>
                                                      </li>
                                                      <li> <a href="<?php echo e(route('users.create')); ?>">S'inscrire</a></li>
                                                  </ul>
@@ -247,10 +244,10 @@
                                          <li> <a href="<?php echo e(route('home.about')); ?>">A Propos</a> </li>
                                          <?php if(auth()->guard()->guest()): ?>
                                              <li class="has-dropdown current-menu-item">
-                                                 <a href="login">Connexion</a>
+                                                 <a href="<?php echo e(route('login')); ?>">Connexion</a>
                                                  <ul class="sub-menu">
                                                      <li class="current-menu-item">
-                                                         <a href="login">Se Connecter</a>
+                                                         <a href="<?php echo e(route('login')); ?>">Se Connecter</a>
                                                      </li>
                                                      <li> <a href="<?php echo e(route('users.create')); ?>">S'inscrire</a></li>
                                                  </ul>
@@ -259,7 +256,7 @@
                                          <?php if(auth()->guard()->check()): ?>
                                              <li><a href="<?php echo e(route('users.show', auth()->user()->id)); ?>"
                                                      class="nav-link px-2 text-white">Mon Compte</a></li>
-                                         <?php endif; ?> 
+                                         <?php endif; ?>
 
                                          <li><a href="<?php echo e(route('home.contact')); ?>">Contact</a></li>
                                      </ul>
@@ -291,4 +288,5 @@
          </div>
      </div>
  </header>
- <!-- end: Header Area --><?php /**PATH /home/ubix-group/sites/TandisApp/resources/views/element/header.blade.php ENDPATH**/ ?>
+ <!-- end: Header Area -->
+<?php /**PATH /home/ubix-group/sites/TandisApp/resources/views/element/header.blade.php ENDPATH**/ ?>

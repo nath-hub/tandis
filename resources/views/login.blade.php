@@ -12,16 +12,17 @@
 
             <div class="row no-gutters shadow-lg">
                 <div class="col-md-5 d-none d-md-block">
-                    <img src="assets/images/blog/b2.jpeg" height="650" />
+                    <img src="{{asset ('assets/images/blog/b2.jpeg')}}" height="650" />
                 </div>
                 <div class=" d-block d-sm-none text-center">
-                    <img src="assets/images/im9.png" height="150" width="150"/>
+                    <img src="{{asset  ('assets/images/im9.png')}}" height="150" width="150"/>
                 </div>
                 <div class="col-md-6 bg-white py-4">
                     <h3 class=" text-center">Connexion</h3>
                     <div class="form-style">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('users.login') }}">
                             @csrf
+                            
                             <div class="form-group border mb-3" style="border-radius: 10px;">
                                 <input type="email" placeholder="Email" class="form-control"
                                     value="{{ old('email') }}" name="email" aria-describedby="emailHelp">

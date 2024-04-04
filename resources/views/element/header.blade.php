@@ -121,9 +121,7 @@
 
  <!-- start: Header Area -->
  <header class="tj-header-area header-absolute header-1">
-
-
-     <div class="tj-header-topbar-area">
+     <div class="tj-header-topbar-area d-lg-block d-none">
          <div class="container">
              <div class="row">
                  <div class="col-lg-12">
@@ -152,8 +150,6 @@
              </div>
          </div>
      </div>
-
-
      <div class="tj-bottom-content-area">
          <div class="container">
              <div class="row">
@@ -167,7 +163,8 @@
                              <div class="tj-menu-area d-lg-block d-none">
                                  <nav>
                                      <ul>
-                                         <li class="current-menu-item"><a href="{{ route('enterprise.index') }}">Home</a>
+                                         <li class="current-menu-item"><a
+                                                 href="{{ route('enterprise.index') }}">Home</a>
                                          </li>
 
 
@@ -178,12 +175,12 @@
                                          <li> <a href="{{ route('home.about') }}">A Propos</a> </li>
                                          @guest
                                              <li class="has-dropdown current-menu-item">
-                                                 <a href="login">Connexion</a>
+                                                 <a href="{{ route('login') }}">Connexion</a>
                                                  <ul class="sub-menu">
                                                      <li class="current-menu-item">
-                                                         <a href="login">Se Connecter</a>
+                                                         <a href="{{ route('login') }}">Se Connecter</a>
                                                      </li>
-                                                     <li> <a href="{{route('users.create')}}">S'inscrire</a></li>
+                                                     <li> <a href="{{ route('users.create') }}">S'inscrire</a></li>
                                                  </ul>
                                              </li>
                                          @endguest
@@ -247,19 +244,19 @@
                                          <li> <a href="{{ route('home.about') }}">A Propos</a> </li>
                                          @guest
                                              <li class="has-dropdown current-menu-item">
-                                                 <a href="login">Connexion</a>
+                                                 <a href="{{ route('login') }}">Connexion</a>
                                                  <ul class="sub-menu">
                                                      <li class="current-menu-item">
-                                                         <a href="login">Se Connecter</a>
+                                                         <a href="{{ route('login') }}">Se Connecter</a>
                                                      </li>
-                                                     <li> <a href="{{route('users.create')}}">S'inscrire</a></li>
+                                                     <li> <a href="{{ route('users.create') }}">S'inscrire</a></li>
                                                  </ul>
                                              </li>
                                          @endguest
                                          @auth
                                              <li><a href="{{ route('users.show', auth()->user()->id) }}"
                                                      class="nav-link px-2 text-white">Mon Compte</a></li>
-                                         @endauth 
+                                         @endauth
 
                                          <li><a href="{{ route('home.contact') }}">Contact</a></li>
                                      </ul>
