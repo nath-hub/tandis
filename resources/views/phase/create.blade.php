@@ -93,6 +93,38 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <th scope="row">prix d'une action : </th>
+                                            <td>
+                                                <div class="col-12">
+                                                    <div class="form-group border " style="border-radius: 10px;">
+                                                        <input type="number" placeholder="prix d'une action"
+                                                            class="form-control" name="prix_action"
+                                                            aria-describedby="prix_actionHelp">
+                                                        @if ($errors->has('prix_action'))
+                                                            <span
+                                                                class="text-danger text-left">{{ $errors->first('prix_action') }}</span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">nombre d'action pendant la phase : </th>
+                                            <td>
+                                                <div class="col-12">
+                                                    <div class="form-group border " style="border-radius: 10px;">
+                                                        <input type="number" placeholder="prix d'une action"
+                                                            class="form-control" name="nombre_action"
+                                                            aria-describedby="nombre_actionHelp">
+                                                        @if ($errors->has('nombre_action'))
+                                                            <span
+                                                                class="text-danger text-left">{{ $errors->first('nombre_action') }}</span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <th scope="row">statut_phase : </th>
                                             <td>
                                                 <div class="col-12">
@@ -152,8 +184,11 @@
                             <th scope="col-2">Début</th>
                             <th scope="col-2">Fin</th>
                             <th scope="col-2">Montant</th>
+                            <th scope="col-2">prix d'une action</th>
+                            <th scope="col-2">nombre d'action</th>
                             <th scope="col-2 tj-color-theme-primary">Statut</th>
                             <th scope="col-2">date de creation</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -163,8 +198,20 @@
                                 <td>{{ $phase->date_debut }}</td>
                                 <td>{{ $phase->date_fin }}</td>
                                 <td>{{ $phase->prix_phase }}</td>
+                                <td>{{ $phase->prix_action }}</td>
+                                <td>{{ $phase->nombre_action }}</td>
                                 <td>{{ $phase->statut_phase }}</td>
                                 <td>{{ $phase->created_at }}</td>
+                                <td> 
+                                    <a href="{{ route('phases.store', $phase->id) }}" class="btn btn-warning" >Modifier</a>
+                                
+                                    <form method="POST" action="{{ route('phases.store', $phase->id) }}" > 
+                                        @csrf
+                                        
+                                        @method("DELETE")
+                                        <input type="submit" class="btn btn-danger" value="x Supprimer" >
+                                    </form>
+                                </td>  
                             </tr>
                         @endforeach
                     </tbody>

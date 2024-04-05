@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\InvestStoreRequest;
+use App\Http\Requests\StorePhaseRequest;
 use App\Models\Invest;
 use App\Models\User;
 use Carbon\Carbon;
@@ -30,31 +31,30 @@ class InvestController extends Controller
 
         $enterprise = Enterprise::where('id', $enterprise)->first();
 
-        $user = auth()->user();
-
-        return view('invest.create', compact('user', 'enterprise'));
-    }
-
-    public function store( Request $request, $enterprise)
-    {
-
-        $enterprise = Enterprise::where('id', $enterprise)->first();
-
-        // $request->validated();
-
         $phase = Phase::where('enterprise_id', $enterprise->id)->where('statut_phase', "En-cour")->first();
          
-        if (empty($phase)){
+        $user = auth()->user();
+
+        return view('invest.create', compact('user', 'enterprise', 'phase'));
+    }
+ 
+    public function store(Request $request, $enterprise)
+    { 
+       $enterprise = Enterprise::where('id', $enterprise)->first();
+
+        $phase = Phase::where('enterprise_id', $enterprise->id)->where('statut_phase', "En-cour")->first();
+
+        if (empty($phase)) {
             return redirect()->route('enterprise.index', compact('phase'))
-            ->with('error', "vous ne pouvez pas investir car aucune phase avec le statut en cour n'a été créé !!!");
-        }else{
+                ->with('error', "vous ne pouvez pas investir car aucune phase avec le statut en cour n'a été créé !!!");
+        } else {
             $phases = $phase->id;
         }
 
-        $user = auth()->user();
+        $user = auth()->user(); 
 
         $enterprise->investisseurs()->attach($user, [
-            'prix_action' => $request->prix_action,
+            'prix_action' => $phase->prix_action,
             'nombre_action' => $request->nombre_action,
             "total_payer" => $request->total_payer,
             "phase_id" => $phases,
@@ -63,7 +63,7 @@ class InvestController extends Controller
 
         return redirect()->route('users.show', compact('user'))
             ->with([
-                'success'=>"félicitation! Vous venez d'acheter les actions !!!",
+                'success' => "félicitation! Vous venez d'acheter les actions !!!",
                 'error' => "Echec de l'enregistrement"
             ]);
     }

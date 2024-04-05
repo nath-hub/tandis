@@ -11,6 +11,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Socialite;
+use Exception;
 
 class UserController extends Controller
 {
@@ -52,7 +55,7 @@ class UserController extends Controller
             ]);
         }
 
-        return redirect('login')->with('success', 'User created successfully.');
+        return redirect()->route('login')->with('success', 'User created successfully.');
 
     }
 
@@ -74,25 +77,98 @@ class UserController extends Controller
         $validate = User::where('email', $user['email'])->first();
 
         // if (!empty($validate) && $validate->email_verified_at != null) {
-        // if (Auth::attempt(['email' => $user['email'], 'password' => $user['password']])) {
+        if (Auth::attempt(['email' => $user['email'], 'password' => $user['password']])) {
 
-        if (Auth::loginUsingId($validate->id)) {
-            $request->session()->regenerate();
+            // if (Auth::loginUsingId($validate->id)) {
+            //     $request->session()->regenerate();
+
+            return redirect('/');
+            // }
+
+        } else {
+            return back()->withErrors([
+                'email' => 'Veuillez verifier votre compte en validant votre adresse mail',
+            ]);
+        }
+
+
+
+
+    }
+
+    public function loginUsingFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function callbackFromFacebook()
+    {
+        try {
+
+            $user = Socialite::driver('facebook')->stateless()->user();
+
+            $finduser = User::where('facebook_id', $user->id)->first();
+
+            if ($finduser) {
+
+                Auth::login($finduser);
+            } else {
+                $newUser = User::create([
+                    'login' => $user->name,
+                    'email' => $user->email,
+                    "phone" => $user->phone,
+                    'facebook_id' => $user->id,
+                    'email_verified_at' => Carbon::now(),
+                    'password' => encrypt('my-google')
+
+                ]);
+
+                Auth::login($newUser);
+            }
 
             return redirect('/');
 
-
+        } catch (\Throwable $th) {
+            throw $th;
         }
+    }
 
-        // }else{
-        //     return back()->withErrors([
-        //         'email' => 'Veuillez verifier votre compte en validant votre adresse mail',
-        //     ]);
-        // }
-
-
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
 
 
+    public function handleCallback()
+    {
+        try {
+
+            $user = Socialite::driver('google')->stateless()->user();
+
+            $finduser = User::where('google_id', $user->id)->first();
+
+            if ($finduser) {
+
+                Auth::login($finduser);
+            } else {
+                $newUser = User::create([
+                    'login' => $user->name,
+                    'email' => $user->email,
+                    "phone" => $user->phone,
+                    'google_id' => $user->id,
+                    'email_verified_at' => Carbon::now(),
+                    'password' => encrypt('my-google')
+
+                ]);
+
+                Auth::login($newUser);
+            }
+
+            return redirect('/');
+
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
     }
 
 
@@ -127,6 +203,7 @@ class UserController extends Controller
     }
     public function edit(user $user)
     {
+
         $enterprise = Enterprise::where('user_id', $user->id)->first();
 
         return redirect()->route('users.edit', [
@@ -134,9 +211,9 @@ class UserController extends Controller
             'enterprise' => $enterprise
         ]);
     }
-    public function update(UserUpdateRequest $request, User $user)
+    public function update(Request $request, User $user)
     {
-        // dd($request->all());
+        dd($request->all());
 
         if (empty($request->file('photo'))) {
             if (empty($user->photo)) {
@@ -159,7 +236,9 @@ class UserController extends Controller
         $user->photo = $avatarPath;
 
         $user->save();
+
         $enterprise = Enterprise::where('user_id', $user->id)->first();
+
         return redirect()->route('users.show', [
             'user' => $user,
             'photo' => asset("$user->photo"),

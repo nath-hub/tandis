@@ -4,10 +4,8 @@
 @include('element.head')
 
 <body>
-
-    {{-- @include('element.prehead') --}}
-
-    {{-- <section class="tj-service-section"> --}}
+ 
+ 
     <div class="container">
         <div class="row pb-5">
             <div class="tj-sec-heading text-center">
@@ -118,14 +116,23 @@
                     <div class="sideline pb-4">OU</div>
                     <div class="pb-4">
                         <div class="row">
+                            
                             <div class="col-6">
-                                <button type="submit" class="btn btn-primary w-100 font-weight-bold"><i
-                                        class="fa-brands fa-facebook" aria-hidden="true"></i></button>
-                            </div>
+                                <form method="GET" action="{{ route('users.facebook') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary w-100 font-weight-bold"><i
+                                            class="fa-brands fa-facebook" aria-hidden="true"></i></button>
+                                </form>
+                            </div> 
+
                             <div class="col-6">
-                                <button type="submit" class="btn btn-danger w-100 font-weight-bold "><i
-                                        class="fa-brands fa-google" aria-hidden="true"></i></button>
+                                <form method="GET" action="{{ route('users.google') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger w-100 font-weight-bold "><i
+                                            class="fa-brands fa-google" aria-hidden="true"></i></button>
+                                </form>
                             </div>
+
                         </div>
 
                     </div>

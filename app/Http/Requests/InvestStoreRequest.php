@@ -20,14 +20,14 @@ class InvestStoreRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
+    { 
         return [
-            // "name" => "string",
+            "name" => "string",
             // "email" => "string|email",
             // "phone" => "integer",
-            "prix_action" => "required|integer",
-            "nombre_action" => "required|integer",
-            "total_payer" => "required|integer", 
+            //'prix_action' => 'required|integer',
+            'nombre_action' => 'required|integer',
+            'total_payer' => 'required|integer', 
         ];
     }
 }

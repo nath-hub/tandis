@@ -25,6 +25,16 @@ Route::get('/about', function () {
     return view('about');
 }); 
 
+Route::group(['middleware' => ['web']], function () {
+
+    Route::get('facebook/auth', [UserController::class, 'loginUsingFacebook'])->name('users.facebook');
+    Route::get('facebook/callback', [UserController::class, 'callbackFromFacebook'])->name('callback');
+
+    Route::get('auth/google', [UserController::class, 'redirectToGoogle'])->name('users.google');
+    Route::get('callback/google', [UserController::class, 'handleCallback']);
+ 
+});
+
 Route::get('auth/login', [UserController::class, 'log'])->name('login');
 Route::post('/login', [UserController::class, 'login'])->name('users.login');
 
@@ -33,8 +43,8 @@ Route::group(['prefix' => 'users'], function () {
     Route::get('/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/create', [UserController::class, 'store'])->name('users.store');
     Route::get('/{user}/show', [UserController::class, 'show'])->name('users.show');
-    Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-    Route::put('/{user}/update', [UserController::class, 'update'])->name('users.update');
+    Route::get('/edit/{user}', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/update/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/{user}/delete', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/logout', [Usercontroller::class, 'logout'])->name('users.logout')
         ->middleware('auth');

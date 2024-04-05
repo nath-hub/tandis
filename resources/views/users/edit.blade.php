@@ -23,12 +23,13 @@
                 {{ session('status') }}
             </div>
         @endif
-        <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="*">
-            @csrf
-            @method('PUT')
 
-            <div class="container py-5 d-none d-md-block">
-                <div class="row  shadow-lg rounded">
+
+        <div class="container py-5 d-none d-md-block">
+            <div class="row  shadow-lg rounded">
+                <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="*">
+                    @csrf
+                    @method('PUT')
                     <div class="col-3 text-center">
                         <div class="user-image-container">
                             <img id="imagePreview" class="rounded-circle" height="200px" width="200px"
@@ -183,11 +184,14 @@
                             </div>
                         </div>
                     </div>
-
-                </div>
+                </form>
             </div>
+        </div>
 
-            <div class=" d-block d-sm-none">
+        <div class=" d-block d-sm-none">
+            <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="*">
+                @csrf
+                @method('PUT')
                 <div class="shadow-lg rounded">
                     <div class="">
                         <div class="row">
@@ -346,9 +350,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-        </form>
+            </form>
+        </div>
     </div>
 
     <script>

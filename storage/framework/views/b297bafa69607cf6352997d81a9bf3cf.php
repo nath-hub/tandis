@@ -108,17 +108,16 @@
                         <div class="footer-contact">
                             <ul>
                                 <li>
-                                    <i class="flaticon-location"></i> 2972 Westheimer Rd. Santa Ana, Illinois
-                                    937949
+                                    <i class="flaticon-location"></i>  Happy - Yaoundé - Cameroun
                                 </li>
                                 <li>
                                     <i class="flaticon-open"></i>
-                                    <a href="mailto:solarplus@gmail.com">admin@tandisinvest.cm </a>
+                                    <a href="mailto:solarplus@gmail.com">tandisinvestment@gmail.com </a>
                                     <a href="mailto:infosolarplus@gmail.com">contact@tandisinvest.cm</a>
                                 </li>
                                 <li>
                                     <i class="flaticon-phone"></i><a href="tel:(1234)5678900"> +(237) 698 962 615</a>
-                                    <a class="d-block" href="tel:1234567890000">123-456-7890000</a>
+                                    <a class="d-block" href="tel:237678790136">+(237) 678 790 136</a>
                                 </li>
                             </ul>
                         </div>

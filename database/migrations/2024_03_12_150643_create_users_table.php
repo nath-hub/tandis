@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('phone')->nullable()->unique();
             $table->string('town')->nullable();
             $table->string('code')->nullable();
+            $table->string('facebook_id')->nullable();
+            $table->string('google_id')->nullable();
             $table->date('birth_date')->nullable();
             $table->string('country')->nullable();
             $table->enum('type', ['ENTERPRISE','ADMIN','INVEST'])->default('INVEST');

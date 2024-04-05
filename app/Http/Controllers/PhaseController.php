@@ -32,9 +32,8 @@ class PhaseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePhaseRequest $request)
+    public function store(Request $request)
     {
-        $request->validated();
 
         $enterprise = Enterprise::where('user_id', auth()->user()->id)->first();
 
@@ -43,9 +42,11 @@ class PhaseController extends Controller
             "date_debut" => $request->date_debut,
             "date_fin" => $request->date_fin, 
             "prix_phase" => $request->prix_phase,
+            "prix_action" => $request->prix_action,
+            "nombre_action" => $request->nombre_action,
             "statut_phase" => $request->statut_phase,
             "enterprise_id" => $enterprise->id
-        ]); 
+        ]);     
 
         $phases = Phase::where('enterprise_id', $enterprise->id)->get();
 

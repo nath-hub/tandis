@@ -31,4 +31,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'facebook' => [
+        'client_id' => '949440299700329', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'client_secret' => 'f0350c045eb812bdfe59aedd8f79e208', //USE FROM FACEBOOK DEVELOPER ACCOUNT
+        'redirect' => 'https://www.tandisinvest.cm/public/facebook/callback'
+    ],
+
+      'google' => [
+        'client_id' => '711970346269-kan6fdluvkqjqv2s4kktl52u8nbjh4ci.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'https://www.tandisinvest.cm/public/callback/google',
+      ], 
+
 ];

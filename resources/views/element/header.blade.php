@@ -29,19 +29,19 @@
 
              </p>
              <div class="canvas-title">
-                 <h4 class="title">Contact info</h4>
+                 <h4 class="title">Information de Contact</h4>
              </div>
              <div class="footer-contact">
                  <ul>
-                     <li><i class="flaticon-location"></i> Yaoundé Cameroun</li>
+                     <li><i class="flaticon-location"></i>Happy Yaoundé Cameroun</li>
                      <li>
                          <i class="flaticon-open"></i>
                          <a href="mailto:contact@tandisinvest.cm">contact@tandisinvest.cm </a>
-                         <a href="mailto:admin@tandisinvest.cm">admin@tandisinvest.cm</a>
+                         <a href="mailto:tandisinvestment@gmail.com">tandisinvestment@gmail.com</a>
                      </li>
                      <li>
                          <i class="flaticon-phone"></i><a href="tel:+(237) 698 962 615">+(237) 698 962 615 </a>
-                         <a class="d-block" href="tel:+(237) 698 962 615">+(237) 698 962 615</a>
+                         <a class="d-block" href="tel:237678790136">+(237) 678 790 136</a>
                      </li>
                  </ul>
              </div>
