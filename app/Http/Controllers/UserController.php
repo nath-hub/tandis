@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Socialite;
-use Exception;
+use Laravel\Socialite\Facades\Socialite;
+use Exception; 
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -46,6 +47,11 @@ class UserController extends Controller
             "password" => Hash::make($request->password),
         ]);
 
+        Mail::send('confirmEmail', ['id' => $user->id], function ($message) use ($user) {
+            $message->to($user->email);
+            $message->subject("E-mail de validation");
+        });
+ 
         if ($role === "ENTERPRISE") {
             Enterprise::create([
                 "user_id" => $user->id,
@@ -105,7 +111,7 @@ class UserController extends Controller
     {
         try {
 
-            $user = Socialite::driver('facebook')->stateless()->user();
+            $user = Socialite::driver('facebook')->user();
 
             $finduser = User::where('facebook_id', $user->id)->first();
 
@@ -143,7 +149,7 @@ class UserController extends Controller
     {
         try {
 
-            $user = Socialite::driver('google')->stateless()->user();
+            $user = Socialite::driver('google')->user();
 
             $finduser = User::where('google_id', $user->id)->first();
 
